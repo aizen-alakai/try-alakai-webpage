@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alakai · 90-Day Trade Performance Action Cycle</title>
+<meta name="description" content="Alakai is the commercial source of truth for FMCG manufacturers. See what changed, know where to act, and measure what worked. Start with one account in a bounded 90-Day Trade Performance Action Cycle.">
+<meta property="og:title" content="See what changed. Know where to act. Measure what worked.">
+<meta property="og:description" content="Turn promotion evidence into approved plan changes before the decision window closes. One account. 90 days.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tryalakai.com/">
+<link rel="icon" href="assets/alakai-logo-primary.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2C2D8E; --blue-bright:#2E31A8; --blue-deep:#1F2066;
+  --ink:#001810; --text:#404040; --charcoal:#33373D;
+  --grey-100:#ECECEC; --grey-300:#D8D8D8; --grey-500:#8A8D93; --lavender:#ABACD2;
+  --white:#FFFFFF;
+  --font:"Poppins","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font);color:var(--text);background:var(--white);font-size:18px;line-height:28px}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+h1,h2,h3,h4{margin:0;color:var(--ink);font-weight:500;line-height:1.1}
+h1{font-size:clamp(34px,5.2vw,64px)}
+h2{font-size:clamp(32px,3.6vw,45px);font-weight:400;line-height:1.15}
+h3{font-size:24px;font-weight:600;line-height:1.25}
+h4{font-size:18px;font-weight:600}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{color:var(--blue);font-weight:500;font-size:14px;letter-spacing:.12em;text-transform:uppercase;line-height:20px}
+.rule{width:64px;height:3px;background:var(--blue);margin:22px 0 28px}
+.lede{font-size:20px;line-height:32px;max-width:760px}
+.muted{color:var(--grey-500)}
+.small{font-size:14px;line-height:22px}
+section{padding:96px 0}
+.section-head{max-width:820px;margin-bottom:56px}
+.btn{display:inline-block;background:var(--blue);color:#fff;font-weight:500;font-size:16px;line-height:22px;padding:17px 36px;border:2px solid var(--blue);border-radius:0;text-decoration:none;cursor:pointer;font-family:var(--font);transition:background .2s,border-color .2s}
+.btn:hover{background:var(--blue-bright);border-color:var(--blue-bright)}
+.btn.secondary{background:transparent;color:var(--blue)}
+.btn.secondary:hover{background:var(--blue);color:#fff}
+.btn.on-blue.secondary{color:#fff;border-color:#fff}
+.btn.on-blue.secondary:hover{background:#fff;color:var(--blue)}
+.btn-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--grey-300)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.nav img{height:30px;width:auto}
+.nav ul{display:flex;gap:32px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--charcoal);text-decoration:none;font-size:15px;font-weight:500}
+.nav ul a:hover{color:var(--blue)}
+.nav .btn{padding:12px 24px;font-size:15px}
+.nav-toggle{display:none;background:none;border:0;padding:8px;cursor:pointer}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--blue);margin:5px 0}
+@media (max-width:900px){
+  .nav ul{display:none}
+  .nav-toggle{display:block}
+  .nav .btn{display:none}
+  .nav.open ul{display:flex;flex-direction:column;position:absolute;left:0;right:0;top:76px;background:#fff;padding:20px 24px 28px;border-bottom:1px solid var(--grey-300);gap:18px}
+  .nav.open .btn{display:inline-block;position:absolute;right:24px;top:calc(76px + 190px)}
+}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blue-deep) 0%,var(--blue) 70%,var(--blue-bright) 100%);color:#fff;padding:104px 0 112px}
+.hero svg.streaks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.hero .eyebrow{color:var(--lavender)}
+.hero h1{color:#fff;margin:22px 0 28px}
+.hero .lede{color:rgba(255,255,255,.88)}
+.hero .rule{background:#fff}
+.hero .proof{margin-top:40px;display:flex;flex-wrap:wrap;gap:10px 28px;font-size:14px;line-height:22px;color:var(--lavender)}
+.hero .proof span::before{content:"";display:inline-block;width:8px;height:8px;background:#fff;margin-right:10px;vertical-align:1px}
+@media (max-width:960px){.hero .wrap{grid-template-columns:1fr}.hero{padding:72px 0 80px}}
+
+/* Action pack preview */
+.pack{background:#fff;color:var(--text);border:1px solid var(--grey-300);box-shadow:none;position:relative}
+.pack-head{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--grey-300)}
+.pack-head .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--blue)}
+.pack-head .ver{font-size:12px;color:var(--grey-500)}
+.pack-title{padding:20px 20px 6px;font-size:18px;line-height:26px;font-weight:600;color:var(--ink)}
+.pack-sub{padding:0 20px 18px;font-size:13px;line-height:20px;color:var(--grey-500)}
+.pack-row{display:grid;grid-template-columns:104px 1fr;gap:16px;padding:16px 20px;border-top:1px solid var(--grey-100);align-items:start}
+.pack-row .k{font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--blue);padding:6px 10px;text-align:center;line-height:16px}
+.pack-row .k.change{background:var(--charcoal)}
+.pack-row .k.accel{background:var(--blue-bright)}
+.pack-row .v{font-size:14px;line-height:21px}
+.pack-row .v strong{display:block;color:var(--ink);font-weight:600}
+.pack-row .v em{display:block;color:var(--grey-500);font-style:normal;font-size:12px;margin-top:4px}
+.pack-foot{padding:14px 20px;background:var(--grey-100);font-size:12px;line-height:18px;color:var(--charcoal);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.pack-foot b{color:var(--blue);font-weight:600}
+.pack .stamp{background:var(--lavender);color:var(--blue-deep);font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:4px 10px;white-space:nowrap}
+.pack-head{gap:12px;flex-wrap:wrap}
+
+/* PROOF STRIP */
+.strip{background:var(--grey-100);padding:36px 0}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.strip .item{border-left:3px solid var(--blue);padding-left:18px}
+.strip .item b{display:block;color:var(--ink);font-size:24px;font-weight:600;line-height:30px}
+.strip .item span{font-size:14px;line-height:21px;color:var(--charcoal)}
+@media (max-width:900px){.strip .wrap{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.strip .wrap{grid-template-columns:1fr}}
+
+/* PROBLEM */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.panel{background:var(--grey-100);padding:36px}
+.panel h3{margin-bottom:18px}
+.panel ul{margin:0;padding:0;list-style:none}
+.panel li{padding:10px 0;border-top:1px solid var(--grey-300);font-size:16px;line-height:25px}
+.panel li:first-child{border-top:0}
+.gap-line{margin-top:40px;padding:32px 36px;border:2px solid var(--blue);display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.gap-line .big{font-size:26px;line-height:34px;color:var(--ink);font-weight:500}
+@media (max-width:900px){.two-col{grid-template-columns:1fr}.gap-line{grid-template-columns:1fr}}
+
+/* CLOCKS */
+.clocks{background:var(--blue-deep);color:#fff}
+.clocks h2,.clocks h3{color:#fff}
+.clocks .eyebrow{color:var(--lavender)}
+.clocks .rule{background:#fff}
+.clocks .lede{color:rgba(255,255,255,.85)}
+.clock-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px}
+.clock{border:1px solid rgba(255,255,255,.28);padding:36px}
+.clock .num{font-size:14px;letter-spacing:.14em;color:var(--lavender);font-weight:600;margin-bottom:14px}
+.clock p{color:rgba(255,255,255,.85);margin-top:16px;font-size:16px;line-height:26px}
+.clock .cost{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.28);font-size:15px;line-height:24px}
+.clock .cost b{color:#fff;display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.clocks .punch{margin-top:48px;font-size:clamp(24px,2.6vw,32px);line-height:1.3;font-weight:500;color:#fff;max-width:760px}
+@media (max-width:900px){.clock-grid{grid-template-columns:1fr}}
+
+/* LOOP */
+.loop{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--grey-300)}
+.loop .step{padding:32px 28px 36px;border-left:1px solid var(--grey-300);position:relative}
+.loop .step:first-child{border-left:0}
+.loop .step .idx{font-size:12px;color:var(--grey-500);letter-spacing:.14em;font-weight:600}
+.loop .step h3{font-size:30px;color:var(--blue);margin:8px 0 18px;letter-spacing:.02em}
+.loop .step p{font-size:15px;line-height:24px}
+.loop .step .result{margin-top:22px;padding-top:16px;border-top:2px solid var(--blue);font-size:14px;line-height:22px;color:var(--ink);font-weight:500}
+.loop .step .result span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-500);font-weight:600;margin-bottom:4px}
+@media (max-width:1000px){.loop{grid-template-columns:1fr 1fr}.loop .step:nth-child(3){border-left:0}.loop .step:nth-child(n+3){border-top:1px solid var(--grey-300)}}
+@media (max-width:560px){.loop{grid-template-columns:1fr}.loop .step{border-left:0;border-top:1px solid var(--grey-300)}.loop .step:first-child{border-top:0}}
+
+/* SHOW */
+.show{background:var(--grey-100)}
+.show-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.show-grid.rev > :first-child{order:2}
+.shot{border:1px solid var(--grey-300);background:#fff;padding:8px}
+.shot img{width:100%}
+.shot-cap{font-size:13px;line-height:20px;color:var(--grey-500);margin-top:10px}
+.show-item{margin-top:72px}
+.show-item:first-of-type{margin-top:0}
+.show-copy h3{font-size:28px;margin-bottom:18px;font-weight:500}
+.show-copy ul{margin:22px 0 0;padding:0;list-style:none}
+.show-copy li{padding:8px 0 8px 22px;position:relative;font-size:16px;line-height:25px}
+.show-copy li::before{content:"";position:absolute;left:0;top:17px;width:10px;height:3px;background:var(--blue)}
+@media (max-width:900px){.show-grid{grid-template-columns:1fr}.show-grid.rev > :first-child{order:0}}
+
+/* LIFT EXAMPLE */
+.lift{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.lift .card{background:var(--blue);color:#fff;padding:40px}
+.lift .card .label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--lavender);font-weight:600}
+.lift .card .offer{font-size:44px;font-weight:600;line-height:1.05;margin:14px 0 6px}
+.lift .card .plus{font-size:20px;color:var(--lavender);margin-bottom:24px}
+.lift .card p{color:rgba(255,255,255,.88);font-size:16px;line-height:26px}
+.lift .card .verdict{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.3);font-weight:500;color:#fff}
+.steps{counter-reset:s}
+.steps .s{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--grey-300)}
+.steps .s:first-child{border-top:0;padding-top:0}
+.steps .s::before{counter-increment:s;content:"0" counter(s);font-size:28px;font-weight:600;color:var(--blue);line-height:1}
+.steps .s h4{margin-bottom:6px}
+.steps .s p{font-size:16px;line-height:25px}
+.lift .punch{margin-top:28px;font-size:22px;line-height:32px;color:var(--ink);font-weight:500}
+@media (max-width:900px){.lift{grid-template-columns:1fr}}
+
+/* CYCLE */
+.cycle{background:var(--blue-deep);color:#fff;position:relative;overflow:hidden}
+.cycle svg.streaks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.7}
+.cycle .wrap{position:relative}
+.cycle h2,.cycle h3,.cycle h4{color:#fff}
+.cycle .eyebrow{color:var(--lavender)}
+.cycle .rule{background:#fff}
+.cycle .lede{color:rgba(255,255,255,.85)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.28);margin:56px 0}
+.facts .f{background:var(--blue-deep);padding:26px 24px}
+.facts .f b{display:block;font-size:30px;font-weight:600;color:#fff;line-height:1.1}
+.facts .f span{display:block;font-size:14px;line-height:21px;color:var(--lavender);margin-top:8px}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.phase{background:#fff;color:var(--text);padding:32px 28px 30px;position:relative}
+.phase .wk{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--blue)}
+.phase h3{color:var(--ink);font-size:24px;margin:10px 0 16px}
+.phase p{font-size:15px;line-height:24px}
+.phase .n{position:absolute;right:24px;top:22px;font-size:40px;font-weight:600;color:var(--grey-300);line-height:1}
+.included{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:24px 48px}
+.included .i{border-top:1px solid rgba(255,255,255,.28);padding-top:18px}
+.included .i h4{margin-bottom:6px}
+.included .i p{font-size:15px;line-height:24px;color:rgba(255,255,255,.85)}
+.cycle .foot{margin-top:40px;font-size:13px;line-height:20px;color:var(--lavender);max-width:900px}
+@media (max-width:1000px){.facts{grid-template-columns:1fr 1fr}.phases{grid-template-columns:1fr}}
+@media (max-width:700px){.included{grid-template-columns:1fr}}
+
+/* BOUNDARY */
+.boundary table{width:100%;border-collapse:collapse;font-size:16px;line-height:25px}
+.boundary th{background:var(--blue);color:#fff;text-align:left;padding:16px 20px;font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.boundary td{padding:20px;border-bottom:1px solid var(--grey-300);vertical-align:top}
+.boundary tr:nth-child(even) td{background:var(--grey-100)}
+.boundary td.level{font-weight:600;color:var(--blue);font-size:15px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.boundary .table-wrap{overflow-x:auto}
+.boundary .note{margin-top:28px;max-width:820px}
+
+/* FIT */
+.fit{background:var(--grey-100)}
+.fit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+.check{display:block;background:#fff;border:1px solid var(--grey-300);padding:22px 24px;margin-top:12px;cursor:pointer;display:grid;grid-template-columns:28px 1fr;gap:18px;align-items:start;transition:border-color .15s}
+.check:hover{border-color:var(--blue)}
+.check input{appearance:none;width:24px;height:24px;border:2px solid var(--blue);margin:2px 0 0;cursor:pointer;position:relative;background:#fff}
+.check input:checked{background:var(--blue)}
+.check input:checked::after{content:"";position:absolute;left:7px;top:2px;width:6px;height:12px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.check b{display:block;color:var(--ink);font-weight:600;font-size:17px;line-height:26px}
+.check span{font-size:15px;line-height:23px;color:var(--charcoal)}
+.fit-result{background:var(--blue-deep);color:#fff;padding:40px;position:sticky;top:100px}
+.fit-result .score{font-size:64px;font-weight:600;line-height:1;color:#fff}
+.fit-result .score small{font-size:20px;color:var(--lavender);font-weight:400}
+.fit-result h3{color:#fff;margin:22px 0 12px}
+.fit-result p{color:rgba(255,255,255,.85);font-size:16px;line-height:26px}
+.fit-result .btn{margin-top:26px}
+@media (max-width:900px){.fit-grid{grid-template-columns:1fr}.fit-result{position:static}}
+
+/* NOT */
+.not-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.not-list{margin:0;padding:0;list-style:none}
+.not-list li{padding:16px 0 16px 34px;border-top:1px solid var(--grey-300);position:relative;font-size:17px;line-height:26px;color:var(--ink)}
+.not-list li:first-child{border-top:0}
+.not-list li::before{content:"";position:absolute;left:0;top:26px;width:18px;height:2px;background:var(--blue)}
+.quote{background:var(--grey-100);padding:36px;border-left:4px solid var(--blue)}
+.quote .label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--blue);margin-bottom:14px}
+.quote p{font-size:19px;line-height:30px;color:var(--ink)}
+.quote .sub{margin-top:18px;font-size:15px;line-height:24px;color:var(--charcoal)}
+@media (max-width:900px){.not-grid{grid-template-columns:1fr}}
+
+/* FOUNDER */
+.founder{background:var(--grey-100)}
+.founder .wrap{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:center}
+.founder img{width:100%;aspect-ratio:11/12;object-fit:cover;object-position:center top;border:1px solid var(--grey-300)}
+.founder p{margin-top:18px;font-size:17px;line-height:28px}
+.founder .who{margin-top:22px;font-size:14px;line-height:22px;color:var(--grey-500)}
+.founder .who b{display:block;color:var(--ink);font-weight:600;font-size:16px}
+@media (max-width:820px){.founder .wrap{grid-template-columns:1fr}.founder img{max-width:300px}}
+
+/* FAQ */
+.faq details{border-top:1px solid var(--grey-300)}
+.faq details:last-child{border-bottom:1px solid var(--grey-300)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 48px 22px 0;font-size:19px;line-height:28px;color:var(--ink);font-weight:500;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:18px;font-size:28px;color:var(--blue);font-weight:400;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq .a{padding:0 0 26px;max-width:860px;font-size:16px;line-height:26px}
+.faq .a p+p{margin-top:12px}
+
+/* CONTACT */
+.contact{background:linear-gradient(135deg,var(--blue-deep) 0%,var(--blue) 80%);color:#fff;position:relative;overflow:hidden}
+.contact svg.streaks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.8}
+.contact .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact h2{color:#fff}
+.contact .eyebrow{color:var(--lavender)}
+.contact .rule{background:#fff}
+.contact .lede{color:rgba(255,255,255,.88)}
+.contact .ways{margin-top:36px}
+.contact .way{border-top:1px solid rgba(255,255,255,.28);padding:20px 0}
+.contact .way b{display:block;color:#fff;font-weight:600;font-size:17px}
+.contact .way p{color:rgba(255,255,255,.8);font-size:15px;line-height:24px;margin-top:4px}
+.contact .way a.link{color:#fff;font-weight:500}
+form{background:#fff;color:var(--text);padding:40px}
+form h3{margin-bottom:6px}
+form .intro{font-size:15px;line-height:23px;color:var(--charcoal);margin-bottom:22px}
+.field{margin-top:16px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--ink);letter-spacing:.04em;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--grey-300);border-radius:0;padding:13px 14px;font:inherit;font-size:16px;line-height:22px;color:var(--ink);background:#fff}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--blue);outline-offset:-1px;border-color:var(--blue)}
+.field textarea{min-height:110px;resize:vertical}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form .btn{width:100%;margin-top:24px;text-align:center}
+form .fine{font-size:12px;line-height:18px;color:var(--grey-500);margin-top:14px}
+.form-ok{display:none;background:var(--grey-100);border-left:4px solid var(--blue);padding:20px;margin-top:20px;font-size:15px;line-height:23px}
+.form-ok.show{display:block}
+@media (max-width:900px){.contact .wrap{grid-template-columns:1fr}form{padding:28px}}
+@media (max-width:520px){.field-row{grid-template-columns:1fr}}
+
+/* FOOTER */
+footer{padding:48px 0 40px;border-top:1px solid var(--grey-300);font-size:14px;line-height:22px;color:var(--grey-500)}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:start}
+footer img{height:26px;width:auto}
+footer nav a{color:var(--charcoal);text-decoration:none;margin-right:22px;font-weight:500}
+footer nav a:hover{color:var(--blue)}
+footer .legal{grid-column:1/-1;border-top:1px solid var(--grey-100);padding-top:20px;margin-top:8px;font-size:12px;line-height:19px;max-width:980px}
+@media (max-width:800px){footer .wrap{grid-template-columns:1fr}}
+
+/* Sticky CTA (mobile) */
+.sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--blue);padding:12px 16px;box-shadow:none}
+.sticky-cta a{display:block;text-align:center;color:#fff;text-decoration:none;font-weight:500;font-size:15px}
+@media (max-width:700px){.sticky-cta{display:block}body{padding-bottom:52px}}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" aria-label="Alakai home"><img src="assets/alakai-wordmark-blue-2x.png" alt="Alakai"></a>
+    <ul>
+      <li><a href="#problem">Why now</a></li>
+      <li><a href="#loop">How it works</a></li>
+      <li><a href="#cycle">The 90-day cycle</a></li>
+      <li><a href="#fit">Is it a fit?</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn" href="#contact">Scope your first account</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <svg class="streaks" viewBox="0 0 1440 700" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="#fff" stroke-width="1.2">
+      <path d="M-100 620 C 300 380, 700 420, 1540 40" opacity=".28"/>
+      <path d="M-100 700 C 350 470, 800 520, 1540 140" opacity=".22"/>
+      <path d="M-100 540 C 250 300, 650 320, 1540 -60" opacity=".18"/>
+      <path d="M200 760 C 500 560, 950 600, 1600 260" opacity=".14"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">For FMCG commercial, RGM, and account teams</div>
+      <h1>See what changed.<br>Know where to act.<br>Measure what worked.</h1>
+      <div class="rule"></div>
+      <p class="lede">Alakai is the commercial source of truth for FMCG manufacturers: what is happening in the market, what to change next, and whether your actions worked. Start with one account and one open decision in a bounded 90-Day Trade Performance Action Cycle.</p>
+      <div class="btn-row" style="margin-top:36px">
+        <a class="btn on-blue" href="#contact" style="background:#fff;color:var(--blue);border-color:#fff">Scope your first account</a>
+        <a class="btn on-blue secondary" href="#cycle">See how the 90 days work</a>
+      </div>
+      <div class="proof">
+        <span>45 grocery banners and growing</span>
+        <span>Weekly, store-level observation</span>
+        <span>Deterministic, reproducible facts</span>
+        <span>Expert-approved actions</span>
+      </div>
+    </div>
+
+    <!-- Illustrative action pack -->
+    <div class="pack" aria-label="Illustrative Trade Performance Action Pack">
+      <div class="pack-head"><span class="tag">Trade Performance Action Pack</span><span class="stamp">Illustrative example</span></div>
+      <div class="pack-title">Improve the forward plan before the next planning window closes.</div>
+      <div class="pack-sub">Completed events analyzed · future events reviewed · actions requiring a leadership decision</div>
+      <div class="pack-row"><div class="k">Stop</div><div class="v"><strong>Deep multi-buy with coupon stacking</strong>Highest unit lift in the set, lowest incremental margin after trade and cannibalization.<em>Provenance: retail sales · TPM event · observed shelf · financial inputs</em></div></div>
+      <div class="pack-row"><div class="k change">Change</div><div class="v"><strong>Hold the week, lighten the depth, trim the PPG mix</strong>Comparable history supports a lighter offer without stacking.<em>Provenance: like-for-like event library · coupon observation</em></div></div>
+      <div class="pack-row"><div class="k accel">Accelerate</div><div class="v"><strong>Expand the feature-and-display event that outperformed</strong>Reallocate avoided trade into the pattern that produced the most value per trade dollar.<em>Provenance: event economics · efficiency comparison</em></div></div>
+      <div class="pack-foot"><span>Decision requested: <b>approve · modify · reject</b>, then name implementation owners</span><span>Every fact deterministic and provenance-cited</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <div class="item"><b>45 banners</b><span>Observed retail coverage, growing monthly</span></div>
+    <div class="item"><b>Weekly · store-level</b><span>Grocery categories, with GTIN-level signals where available</span></div>
+    <div class="item"><b>Deterministic facts</b><span>Reproducible calculations under fact-integrity SLA language</span></div>
+    <div class="item"><b>Post Event Analytics live</b><span>Validation, actualization, and planning guardrails today</span></div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The problem is fragmentation, not expertise</div>
+      <h2 style="margin-top:14px">Your systems are right. They still cannot produce one commercial answer.</h2>
+      <div class="rule"></div>
+      <p class="lede">Retail sales, shelf execution, TPM plans, and manufacturer economics live in systems that were never built to agree. What actually happened in the aisle sits outside all of them.</p>
+    </div>
+    <div class="two-col">
+      <div class="panel">
+        <h3>What happened at shelf</h3>
+        <ul>
+          <li>Everyday shelf price and promoted price</li>
+          <li>Promotion tactics, coupons, and stacking</li>
+          <li>Store-level availability and out-of-stocks</li>
+          <li>Competitive price, pack, and assortment moves</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>What happened to the manufacturer</h3>
+        <ul>
+          <li>TPM plan, retailer contracts, and account trackers</li>
+          <li>Trade spend and funding assumptions</li>
+          <li>Net sales, gross margin, variable cost, and product mix</li>
+          <li>Annual plan, demand plan, and supply commitments</li>
+        </ul>
+      </div>
+    </div>
+    <div class="gap-line">
+      <img src="assets/alakai-arrow-motif.png" alt="" style="height:96px;width:auto" aria-hidden="true">
+      <div>
+        <div class="big">The gap is not the people. The systems were never built to agree.</div>
+        <p style="margin-top:10px">Every team's numbers are valid in the system they use. Reconciling them by hand, event by event, is where time goes and where the decision window closes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TWO CLOCKS -->
+<section class="clocks">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:0">
+      <div class="eyebrow">Why act now</div>
+      <h2 style="margin-top:14px">Delay closes two windows.</h2>
+      <div class="rule"></div>
+      <p class="lede">The business learns too late on two clocks. Both are running whether or not anyone is watching them.</p>
+    </div>
+    <div class="clock-grid">
+      <div class="clock">
+        <div class="num">01 · THE PLANNING CLOCK</div>
+        <h3>The plan can lock.</h3>
+        <p>AOP, quarterly reviews, and promotion change windows arrive on schedule. Once buyer conversations, TPM, demand, and supply plans align, even a known risk becomes hard to change.</p>
+        <div class="cost"><b>Cost of delay</b>Weak assumptions become committed plans and committed spend.</div>
+      </div>
+      <div class="clock">
+        <div class="num">02 · THE MARKET CLOCK</div>
+        <h3>The market can move.</h3>
+        <p>A competitor changes price, pack, or assortment at one account. By the time the share shift shows up in traditional reporting, the response still has to be aligned and sold in.</p>
+        <div class="cost"><b>Cost of delay</b>Share, revenue, and margin losses compound before anyone responds.</div>
+      </div>
+    </div>
+    <p class="punch">The value is not faster analysis. It is earlier action, before the next window closes.</p>
+  </div>
+</section>
+
+<!-- LOOP -->
+<section id="loop">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How Alakai works</div>
+      <h2 style="margin-top:14px">One source of truth. Four connected decisions.</h2>
+      <div class="rule"></div>
+      <p class="lede">Alakai's difference is the closed loop from observed market truth to expert action and measured outcome, not feature breadth.</p>
+    </div>
+    <div class="loop">
+      <div class="step">
+        <div class="idx">01</div>
+        <h3>SEE</h3>
+        <p>Combine observed shelf price, promotions, coupon stacking, assortment, availability, and competitive signals with your plans and economics.</p>
+        <div class="result"><span>Business result</span>Teams see material changes by account sooner.</div>
+      </div>
+      <div class="step">
+        <div class="idx">02</div>
+        <h3>DECIDE</h3>
+        <p>Compute commercial facts deterministically and reproducibly. Surface the risks, opportunities, and plan changes that deserve expert attention.</p>
+        <div class="result"><span>Business result</span>Experts focus on choices instead of reconciliation.</div>
+      </div>
+      <div class="step">
+        <div class="idx">03</div>
+        <h3>ACT</h3>
+        <p>Deliver provenance-cited priorities in the working language of account, RGM, analytics, finance, and leadership teams, inside the decision workflow.</p>
+        <div class="result"><span>Business result</span>Teams align and change the forward plan while the window is open.</div>
+      </div>
+      <div class="step">
+        <div class="idx">04</div>
+        <h3>MEASURE</h3>
+        <p>Snapshot the original plan and the approved change, then actualize execution and realized outcomes later.</p>
+        <div class="result"><span>Business result</span>The organization learns what truly worked.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT LOOKS LIKE -->
+<section class="show">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What your teams receive</div>
+      <h2 style="margin-top:14px">Decision-ready evidence, not another dashboard.</h2>
+      <div class="rule"></div>
+      <p class="lede">During the first cycle, the Alakai team works directly with your account and revenue leaders. Action packs and supporting data arrive before every user account and integration is live.</p>
+    </div>
+
+    <div class="show-item show-grid">
+      <div class="show-copy">
+        <div class="eyebrow">Post Event Analytics · live today</div>
+        <h3 style="margin-top:12px">Every event measured against manufacturer economics, not unit lift alone.</h3>
+        <p>Incremental gross sales, trade investment, incremental net sales, gross margin, and value per trade dollar, compared to the account's own benchmark, with a plain-language takeaway your account team can carry into the buyer meeting.</p>
+        <ul>
+          <li>Deterministic calculations from approved inputs</li>
+          <li>Like-for-like comparison against completed events</li>
+          <li>Stop, change, or accelerate recommendation for expert review</li>
+        </ul>
+      </div>
+      <div>
+        <div class="shot"><img src="assets/post-event-insights.png" alt="Alakai post-event promotion insights comparing the current promotion to the last 52 weeks benchmark"></div>
+        <div class="shot-cap">Post-event insights view from the Alakai platform. Values shown are from a sample event.</div>
+      </div>
+    </div>
+
+    <div class="show-item show-grid rev">
+      <div class="show-copy">
+        <div class="eyebrow">Competitive signal · within covered scope</div>
+        <h3 style="margin-top:12px">See what competitors ran in the same aisle, in the same window.</h3>
+        <p>Observed competitive promotions and material shelf-price or price-pack changes at the selected account, with a before-and-after view of how relative shopper value moved. Detection and relative value change, so leaders know when to investigate and respond.</p>
+        <ul>
+          <li>Overlapping competitive events during your promotion window</li>
+          <li>Shelf-to-deal price and best unit value, side by side</li>
+          <li>Experts rate the impact; Alakai keeps the provenance</li>
+        </ul>
+      </div>
+      <div>
+        <div class="shot"><img src="assets/competitor-promotions-workflow.png" alt="Alakai workflow step confirming overlapping competitive promotions during a promotion window"></div>
+        <div class="shot-cap">Competitive event confirmation step from the Alakai validation workflow. Sample data.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFT vs PROFIT -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why the fact base matters</div>
+      <h2 style="margin-top:14px">Unit lift can rise while profit falls.</h2>
+      <div class="rule"></div>
+      <p class="lede">A promotion can look successful right up until shelf mechanics and manufacturer economics meet.</p>
+    </div>
+    <div class="lift">
+      <div class="card">
+        <div class="label">Anonymized event</div>
+        <div class="offer">3 for $10</div>
+        <div class="plus">+ coupon stacking</div>
+        <p>Highest retail unit lift in its set. But the depth overspent trade, cannibalized base volume, and produced less incremental value than a lighter offer in the same account.</p>
+        <div class="verdict">A larger lift is not the same as a better commercial outcome.</div>
+      </div>
+      <div>
+        <div class="steps">
+          <div class="s"><div><h4>Expose the full event</h4><p>Shelf price, promotion mechanics, coupon stacking, eligible products, and what actually executed at store level.</p></div></div>
+          <div class="s"><div><h4>Compute the economics</h4><p>Deterministic trade, incremental net sales, gross margin, cannibalization, and product-mix effects, reproducible from approved inputs.</p></div></div>
+          <div class="s"><div><h4>Recommend the next move</h4><p>Remove high-cost, low-lift PPGs, avoid stacking, or choose a better tactic or week. Your experts approve, modify, or reject.</p></div></div>
+        </div>
+        <p class="punch">Evaluate the full profit pool before repeating the event.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 90-DAY CYCLE -->
+<section class="cycle" id="cycle">
+  <svg class="streaks" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="#fff" stroke-width="1.2">
+      <path d="M-100 860 C 300 560, 700 620, 1540 120" opacity=".2"/>
+      <path d="M-100 940 C 350 660, 800 720, 1540 220" opacity=".14"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The first purchase</div>
+      <h2 style="margin-top:14px">The 90-Day Trade Performance Action Cycle</h2>
+      <div class="rule"></div>
+      <p class="lede">Turn promotion evidence into approved plan changes before the decision window closes. For one selected account, Alakai turns in-scope promotions and the forward plan into fact-based priorities and a measurement-ready record.</p>
+    </div>
+
+    <div class="facts">
+      <div class="f"><b>One account</b><span>Selected for meaningful revenue, trade, or strategic exposure</span></div>
+      <div class="f"><b>90 days</b><span>Begins once scope and required data are ready</span></div>
+      <div class="f"><b>6-month view</b><span>Relevant future promotions reviewed where available</span></div>
+      <div class="f"><b>From ~$35K*</b><span>Working starting point; final fee follows agreed scope</span></div>
+    </div>
+
+    <div class="phases">
+      <div class="phase">
+        <div class="n">1</div>
+        <div class="wk">Weeks 1–3</div>
+        <h3>Baseline</h3>
+        <p>Confirm the active decision window and in-scope promotions. Connect approved inputs. Snapshot the forward plan and compute the first decision-ready facts.</p>
+      </div>
+      <div class="phase">
+        <div class="n">2</div>
+        <div class="wk">Weeks 4–8</div>
+        <h3>Prioritize</h3>
+        <p>Compare event economics, identify stop, change, and accelerate opportunities, quantify supported annualized opportunity, and flag material competitive price-pack changes within covered scope.</p>
+      </div>
+      <div class="phase">
+        <div class="n">3</div>
+        <div class="wk">Weeks 9–12</div>
+        <h3>Decide and record</h3>
+        <p>Review priorities with account and RGM leadership. Capture approved additions, removals, or modifications. Deliver the action pack, data, and measurement baseline.</p>
+      </div>
+    </div>
+
+    <div class="included">
+      <div class="i"><h4>Promotion facts and priorities</h4><p>Deterministic analysis of agreed in-scope promotions and relevant planned promotions up to six months forward.</p></div>
+      <div class="i"><h4>Expert-reviewed actions</h4><p>Supported recommendations to stop, change, or accelerate future promotions. No action is implemented without your approval.</p></div>
+      <div class="i"><h4>Limited competitive signal</h4><p>A flag for material shelf-price or price-pack changes in the selected account, showing how relative shopper value changed where observed coverage supports it.</p></div>
+      <div class="i"><h4>Action-ready outputs</h4><p>Provenance-cited action pack and supporting data, plus a snapshot of approved plan changes for future actualization.</p></div>
+    </div>
+
+    <div class="btn-row" style="margin-top:48px">
+      <a class="btn" href="#contact" style="background:#fff;color:var(--blue);border-color:#fff">Scope your first account</a>
+      <a class="btn on-blue secondary" href="#fit">Check if your account is a fit</a>
+    </div>
+    <p class="foot">*Working starting point for one account. Final fee varies with customer scale, scope, data readiness, and delivery effort. Annualized opportunity is not realized impact. Alakai controls analysis and delivery; customers control approval and implementation; the market controls realized results.</p>
+  </div>
+</section>
+
+<!-- SUCCESS BOUNDARY -->
+<section class="boundary">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">A clear success boundary</div>
+      <h2 style="margin-top:14px">We commit to what we control. We target what you control. We measure what the market realizes.</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Level</th><th>Who controls it</th><th>Evidence of success</th></tr></thead>
+        <tbody>
+          <tr><td class="level">Guarantee</td><td>Alakai</td><td>Facts computed; risks and opportunities identified; prioritized recommendations and provenance-cited outputs delivered.</td></tr>
+          <tr><td class="level">Target</td><td>Your team</td><td>Recommendations reviewed; actions approved; future plans changed; trade reallocated or avoided.</td></tr>
+          <tr><td class="level">Measure</td><td>Shared, plus the market</td><td>Approved events execute; net sales, gross margin, trade, share, and execution outcomes are actualized later.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">The initial cycle does not guarantee autonomous execution or financial results. It guarantees the fact base and priorities your experts need, and it establishes measurement from day one so the next cycle starts smarter.</p>
+  </div>
+</section>
+
+<!-- FIT CHECK -->
+<section class="fit" id="fit">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Is your account a fit?</div>
+      <h2 style="margin-top:14px">The right first account has four things.</h2>
+      <div class="rule"></div>
+      <p class="lede">Check what is true today. We use the same four gates in every scoping conversation.</p>
+    </div>
+    <div class="fit-grid">
+      <div id="fitChecks">
+        <label class="check"><input type="checkbox" data-fit><div><b>A commercial decision or market exposure active within 30 to 90 days</b><span>An account plan, buyer conversation, promotion change window, or competitive move that will get harder to influence soon.</span></div></label>
+        <label class="check"><input type="checkbox" data-fit><div><b>A named sales or account leader who can sponsor or approve change</b><span>Someone who owns the account decision and its retailer and financial consequences.</span></div></label>
+        <label class="check"><input type="checkbox" data-fit><div><b>An existing budget owner for a bounded engagement</b><span>Commercial analytics, RGM, transformation, or channel budget that can fund one account without a multi-year platform RFP.</span></div></label>
+        <label class="check"><input type="checkbox" data-fit><div><b>An approved data path that can arrive before the decision window closes</b><span>Retail or syndicated sales, TPM planned events, hierarchy, product/PPG, and financial inputs with named owners.</span></div></label>
+      </div>
+      <div class="fit-result" id="fitResult">
+        <div class="score"><span id="fitScore">0</span><small> of 4</small></div>
+        <h3 id="fitTitle">Start checking.</h3>
+        <p id="fitText">Most teams have two or three in place already. The scoping call is where we name the missing one and decide whether the timing works.</p>
+        <a class="btn" href="#contact" id="fitCta" style="background:#fff;color:var(--blue);border-color:#fff">Talk through your account</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT ALAKAI IS NOT -->
+<section>
+  <div class="wrap">
+    <div class="not-grid">
+      <div>
+        <div class="eyebrow">Keep your systems. Keep your experts.</div>
+        <h2 style="margin-top:14px">What Alakai is not.</h2>
+        <div class="rule"></div>
+        <ul class="not-list">
+          <li>Not a TPM source of record, and not a replacement for every incumbent RGM capability</li>
+          <li>Not a BI dashboard that stops at reporting</li>
+          <li>Not a consulting engagement that depends on bespoke human analysis</li>
+          <li>Not a standalone AI chat tool</li>
+          <li>Not an autonomous decision maker</li>
+        </ul>
+        <p style="margin-top:28px">Experts review and approve every recommendation. Alakai can operate read-only while your team implements approved changes in the systems you already use.</p>
+      </div>
+      <div class="quote">
+        <div class="label">How we use AI</div>
+        <p>Alakai computes commercial facts deterministically. AI helps experts investigate the evidence and create audience-ready outputs. Every recommendation retains provenance, and every action requires expert approval.</p>
+        <p class="sub">Let the intelligence lead attention. Let experts lead the business. Customer data is handled under agreed confidentiality, security, and data-processing terms. Read more on <a href="https://alakailabs.com/data-security-and-trust/">data security and trust</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder">
+  <div class="wrap">
+    <img src="assets/cam-lizenby.jpg" alt="Cam Lizenby, founder of Alakai Labs">
+    <div>
+      <div class="eyebrow">Built from the account side</div>
+      <h2 style="margin-top:14px">Built by someone who ran the accounts.</h2>
+      <div class="rule"></div>
+      <p>Alakai was built by a former Kellogg's commercial leader who spent seven years watching enterprise CPG teams leave value on the table. The data existed. It was disconnected, delayed, and impossible to act on at scale.</p>
+      <p>Every part of the 90-day cycle traces back to a specific gap that real account teams, RGM managers, and sales analysts cannot close with the tools they have today.</p>
+      <div class="who"><b>Cam Lizenby</b>Founder and CEO, Alakai Labs, Inc.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Questions we hear first</div>
+      <h2 style="margin-top:14px">Straight answers, inside what we can prove.</h2>
+      <div class="rule"></div>
+    </div>
+    <details>
+      <summary>We already have TPM, TPO, RGM, and syndicated tools. Why add Alakai?</summary>
+      <div class="a"><p>You should keep those systems. Alakai does not replace the TPM or ERP. It connects planned events, observed shelf execution, and manufacturer economics so teams can see what should change while the decision is still actionable. The first cycle is bounded to one account and can operate read-only.</p></div>
+    </details>
+    <details>
+      <summary>Can you guarantee incremental net sales or gross margin?</summary>
+      <div class="a"><p>No, and we would be cautious of anyone who does. Alakai guarantees the work it controls: agreed analysis, reproducible facts, prioritized risks and recommendations, provenance, and committed deliverables. The cycle targets your approved plan changes and establishes measurement for realized outcomes. Retailer acceptance, execution, shopper response, and market results sit outside a responsible guarantee.</p></div>
+    </details>
+    <details>
+      <summary>Our data is not clean or ready enough.</summary>
+      <div class="a"><p>Data readiness is a gating condition, not a promise of perfect enterprise data. We start with one account and the minimum approved inputs, confirm coverage and business rules in the first phase, document exceptions, and adjust scope when needed. The 90-day schedule begins when the minimum data path is confirmed.</p></div>
+    </details>
+    <details>
+      <summary>We do not want another AI tool.</summary>
+      <div class="a"><p>You are not buying AI as the category. The business value is earlier commercial evidence and clearer action. Alakai computes the facts deterministically; AI helps experts investigate the evidence and create audience-ready outputs. It does not invent the economics or approve the action.</p></div>
+    </details>
+    <details>
+      <summary>Can Alakai update our TPM plan or retailer contracts automatically?</summary>
+      <div class="a"><p>The initial cycle operates read-only. Your experts approve the recommendation, communicate it to the retailer buyer, and update the retailer contract and internal TPM plan through existing workflows. Alakai snapshots the approved change so it can be measured later. Deeper write-back is not required to prove the first outcome.</p></div>
+    </details>
+    <details>
+      <summary>Can Alakai tell us the optimal response to a competitor's price-pack move?</summary>
+      <div class="a"><p>Within covered scope, Alakai flags a material competitive shelf-price or price-pack change and shows how relative shopper value moved. That earlier signal helps leaders decide when to investigate and respond. A fully optimized response requires elasticity and scenario inputs that are not part of the initial commitment.</p></div>
+    </details>
+    <details>
+      <summary>Why pay about $35,000 for one account?</summary>
+      <div class="a"><p>The entry offer is a bounded commercial action cycle, not generic software access. It analyzes live promotions and the forward plan, quantifies supported stop, change, and accelerate opportunities, and establishes the baseline to measure approved changes. Compare the fee to the revenue, trade, and margin the selected account exposes, and to the cost of repeating one weak event. The final fee depends on scale, data readiness, scope, and delivery effort.</p></div>
+    </details>
+    <details>
+      <summary>Will our teams have to adopt a new application?</summary>
+      <div class="a"><p>Not to start. Alakai works collaboratively with revenue management, sales planning, analytics, and the account team, then delivers a provenance-cited action pack and supporting data. Direct access is activated as approvals mature. The first success event is a leadership-reviewed action, not a login count.</p></div>
+    </details>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <svg class="streaks" viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="#fff" stroke-width="1.2">
+      <path d="M-100 760 C 300 480, 700 540, 1540 60" opacity=".22"/>
+      <path d="M-100 840 C 350 580, 800 640, 1540 160" opacity=".16"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Start where the next decision is still open</div>
+      <h2 style="margin-top:14px">Choose the account. Name the decision. Agree the success boundary.</h2>
+      <div class="rule"></div>
+      <p class="lede">A 30-minute scoping conversation is enough to tell whether a 90-Day Trade Performance Action Cycle can inform your decision before the window closes. No platform tour. One account, one event, one future plan.</p>
+      <div class="ways">
+        <div class="way"><b>Book a scoping call</b><p>Pick a time that works. We will ask about the open decision, its deadline, and who owns the action and the budget.</p><p style="margin-top:10px"><a class="link" id="calendarLink" href="#" target="_blank" rel="noopener">Open the calendar →</a></p></div>
+        <div class="way"><b>Prefer email?</b><p>Tell us the account and the decision window in a sentence and we will come back with the two or three questions that matter.</p><p style="margin-top:10px"><a class="link" id="emailLink" href="#">Email the team →</a></p></div>
+        <div class="way"><b>Already know it is a fit?</b><p>Ask for the Proposal and Statement of Work outline for the 90-Day Trade Performance Action Cycle and share it with your budget owner.</p></div>
+      </div>
+    </div>
+
+    <form id="leadForm" novalidate>
+      <h3>Scope your first account</h3>
+      <p class="intro">Nothing here commits you. It gives us enough to make the first call useful.</p>
+      <div class="field-row">
+        <div class="field"><label for="f_name">Name</label><input id="f_name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="f_email">Work email</label><input id="f_email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="f_company">Company</label><input id="f_company" name="company" type="text" autocomplete="organization" required></div>
+        <div class="field"><label for="f_role">Your role</label>
+          <select id="f_role" name="role">
+            <option value="">Select</option>
+            <option>Sales / account leadership</option>
+            <option>Revenue Growth Management</option>
+            <option>Commercial analytics / insights</option>
+            <option>Finance / commercial leadership</option>
+            <option>Transformation / IT</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="f_window">When does the next decision window close?</label>
+        <select id="f_window" name="decision_window">
+          <option value="">Select</option>
+          <option>Within 30 days</option>
+          <option>30 to 90 days</option>
+          <option>Later this year</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field"><label for="f_decision">Which account decision or market exposure is open right now?</label><textarea id="f_decision" name="decision" placeholder="Account, category, and the decision you would like to inform"></textarea></div>
+      <input type="hidden" name="fit_score" id="f_fit" value="">
+      <input type="hidden" name="source" value="tryalakai.com">
+      <button class="btn" type="submit">Request a scoping call</button>
+      <div class="form-ok" id="formOk">Thank you. Your email client should have opened with the details filled in. If it did not, email us directly at <a href="#" id="emailLink2">the address above</a>.</div>
+      <p class="fine">We reply to every request from a manufacturer commercial team. We do not sell or share your details. Alakai extends expert judgment; it does not replace it.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/alakai-wordmark-blue-2x.png" alt="Alakai">
+    <nav>
+      <a href="https://alakailabs.com/">alakailabs.com</a>
+      <a href="https://alakailabs.com/how-alakai-works-cpg-trade-promotion-analytics/">How Alakai works</a>
+      <a href="https://alakailabs.com/data-security-and-trust/">Data security</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div>Alakai Labs, Inc. © 2026. All rights reserved.</div>
+    <div class="legal">Coverage claims apply to covered banners and categories; GTIN-level signals and competitive observations are available where coverage supports them. Commercial calculations are deterministic and reproducible; AI-assisted investigation and narrative are not deterministic facts. Any opportunity figure is an annualized opportunity supported by stated assumptions, not realized impact. Pricing is a working starting point for one account and varies with scale, scope, data readiness, and delivery effort.</div>
+  </div>
+</footer>
+
+<div class="sticky-cta"><a href="#contact">Scope your first account →</a></div>
+
+<script>
+/* ---------- CONFIG: swap these before publishing ---------- */
+var CONFIG = {
+  // Existing public booking link from alakailabs.com, tagged for this site.
+  calendarUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3ZODiaE1xRRjrfAIcmAlv8qBab3uAePzYY3nNhO2TQvm-7yzCmERpYA3OzffrwOMW4tCx7qk0Z?gv=true&utm_source=tryalakai&utm_medium=landing",
+  // Replace with the inbox that should receive scoping requests.
+  contactEmail: "hello@tryalakai.com",
+  // Optional: a form endpoint (Formspree, HubSpot, Netlify, etc.). Leave empty to use the mailto fallback.
+  formEndpoint: ""
+};
+
+(function(){
+  var cal = document.getElementById('calendarLink'); cal.href = CONFIG.calendarUrl;
+  var mail = 'mailto:' + CONFIG.contactEmail + '?subject=' + encodeURIComponent('90-Day Trade Performance Action Cycle: scoping');
+  document.getElementById('emailLink').href = mail;
+  document.getElementById('emailLink2').href = mail;
+  document.getElementById('emailLink2').textContent = CONFIG.contactEmail;
+
+  // Fit check
+  var boxes = document.querySelectorAll('[data-fit]');
+  var score = document.getElementById('fitScore'), title = document.getElementById('fitTitle'), text = document.getElementById('fitText'), cta = document.getElementById('fitCta');
+  var copy = {
+    0: ["Start checking.", "Most teams have two or three in place already. The scoping call is where we name the missing one and decide whether the timing works.", "Talk through your account"],
+    1: ["Early, and that is fine.", "One gate in place usually means the decision or the owner is still forming. A short call can tell you whether to move now or wait consciously.", "Ask about timing"],
+    2: ["Worth a conversation.", "Two gates in place. The next step is naming the missing owner or data path with a date, before anyone writes a proposal.", "Name the missing piece with us"],
+    3: ["Likely a fit.", "Three of four. In most cases the fourth resolves in a 60-minute scope and source-mapping session with your data and workflow owners.", "Book a scoping call"],
+    4: ["Strong fit. Move before the window closes.", "All four gates are in place. Choose the account, name the decision, and we will agree the success boundary on the first call.", "Scope your first account now"]
+  };
+  function update(){
+    var n = 0; boxes.forEach(function(b){ if(b.checked) n++; });
+    score.textContent = n; title.textContent = copy[n][0]; text.textContent = copy[n][1]; cta.textContent = copy[n][2];
+    document.getElementById('f_fit').value = n + ' of 4';
+  }
+  boxes.forEach(function(b){ b.addEventListener('change', update); });
+
+  // Form
+  var form = document.getElementById('leadForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var req = ['f_name','f_email','f_company'], ok = true;
+    req.forEach(function(id){ var el = document.getElementById(id); if(!el.value.trim()){ el.style.borderColor = '#B00020'; ok = false; } else { el.style.borderColor = ''; } });
+    if(!ok) return;
+    var data = {}; new FormData(form).forEach(function(v,k){ data[k] = v; });
+    if(CONFIG.formEndpoint){
+      fetch(CONFIG.formEndpoint, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(data)})
+        .then(function(){ showOk('Thank you. We will reply within one business day with the two or three questions that matter for your account.'); form.reset(); })
+        .catch(function(){ mailtoFallback(data); });
+    } else {
+      mailtoFallback(data);
+    }
+  });
+  function mailtoFallback(d){
+    var body = 'Name: ' + d.name + '\nWork email: ' + d.email + '\nCompany: ' + d.company + '\nRole: ' + (d.role||'') +
+      '\nDecision window: ' + (d.decision_window||'') + '\nFit check: ' + (d.fit_score||'not completed') +
+      '\n\nOpen decision / exposure:\n' + (d.decision||'') + '\n\nSource: tryalakai.com';
+    window.location.href = 'mailto:' + CONFIG.contactEmail + '?subject=' + encodeURIComponent('Scoping request: 90-Day Trade Performance Action Cycle') + '&body=' + encodeURIComponent(body);
+    showOk();
+  }
+  function showOk(msg){ var ok = document.getElementById('formOk'); if(msg) ok.textContent = msg; ok.classList.add('show'); }
+
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav ul a').forEach(function(a){ a.addEventListener('click', function(){ document.getElementById('nav').classList.remove('open'); }); });
+})();
+</script>
+</body>
+</html>
