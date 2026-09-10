@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alakai · See what changed. Know where to act.</title>
-<meta name="description" content="Alakai connects what happened at the shelf with your plans and economics so FMCG commercial teams can change the forward plan before the window closes. Request a demo.">
+<title>Try Alakai · See what changed. Know where to act.</title>
+<meta name="description" content="Your next 12 weeks of promotions are already committed. Alakai connects what ran at the shelf with your plan and economics, and brings team and buyer feedback into one proposal you can agree before the next promotions lock. Explore a 90-day trial on one account.">
 <meta property="og:title" content="See what changed. Know where to act. Measure what worked.">
-<meta property="og:description" content="Start with one account in a 90-Day Trade Performance Action Cycle. Request a demo or book a time.">
+<meta property="og:description" content="Improve the promotions you can still change. One account, one proposal, agreed before it locks. Explore a 90-day trial.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tryalakai.com/">
 <link rel="icon" href="assets/alakai-logo-primary.png">
@@ -50,6 +50,7 @@ p{margin:0}
 .hero h1{color:#fff;font-size:clamp(34px,4.6vw,58px);margin:18px 0 22px}
 .hero .rule{width:64px;height:3px;background:#fff;margin:0 0 24px}
 .hero .lede{font-size:19px;line-height:30px;color:rgba(255,255,255,.9);max-width:560px}
+.hero .lede strong{color:#fff;font-weight:600}
 .hero .proof{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:600px}
 .hero .proof div{border-top:1px solid rgba(255,255,255,.35);padding-top:12px}
 .hero .proof b{display:block;color:#fff;font-size:22px;font-weight:600;line-height:1.1}
@@ -79,10 +80,10 @@ p{margin:0}
 @media (max-width:520px){.field-row{grid-template-columns:1fr}.card{padding:24px}}
 
 /* SCREEN 2 */
-.how{padding:56px 0 48px}
+.how{padding:48px 0 44px}
 .how .head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:28px}
 .how h2{font-size:clamp(28px,3vw,38px);font-weight:400;max-width:620px}
-.how .head p{max-width:400px;font-size:15px;line-height:24px}
+.how .head p{max-width:420px;font-size:15px;line-height:24px}
 .loop{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--grey-300)}
 .loop .s{padding:22px 22px 20px;border-left:1px solid var(--grey-300);position:relative}
 .loop .s:first-child{border-left:0}
@@ -94,31 +95,35 @@ p{margin:0}
 @media (max-width:900px){.how .head{flex-direction:column;align-items:start}.loop{grid-template-columns:1fr 1fr}.loop .s:nth-child(3){border-left:0}.loop .s:nth-child(n+3){border-top:1px solid var(--grey-300)}.loop .s:nth-child(2) .arrow{display:none}}
 @media (max-width:520px){.loop{grid-template-columns:1fr}.loop .s{border-left:0;border-top:1px solid var(--grey-300)}.loop .s:first-child{border-top:0}.loop .arrow{display:none}}
 
-.cycle{background:var(--grey-100);padding:56px 0 56px}
+.cycle{background:var(--grey-100);padding:48px 0 52px}
 .cycle .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .cycle h2{font-size:clamp(28px,3vw,38px);font-weight:400;margin-bottom:12px}
 .cycle .lede{font-size:16px;line-height:26px;max-width:520px}
-.timeline{margin-top:22px;width:100%;max-width:520px;height:auto;display:block}
-.cycle .facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:18px}
-.cycle .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;align-items:center}
-.cycle .ctas .hint{font-size:14px;color:var(--charcoal);flex-basis:100%}
-.cycle .facts div{border-left:3px solid var(--blue);padding-left:12px}
+.timeline{margin-top:22px;width:100%;max-width:540px;display:grid;grid-template-columns:140fr 233fr 187fr}
+.timeline .phase{min-width:0;display:grid;grid-template-rows:auto 14px auto auto;row-gap:8px;align-content:start}
+.timeline .when{padding-right:10px;color:var(--blue);font-size:12px;line-height:17px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.timeline .when small{display:block;color:var(--grey-500);font-weight:500;letter-spacing:0;text-transform:none}
+.timeline .rail{display:block;background:var(--blue);border-right:2px solid #fff}
+.timeline .phase:first-child .rail{background:var(--lavender)}
+.timeline .phase:last-child .rail{background:var(--blue-deep);border-right:0}
+.timeline h3{font-size:16px;line-height:22px;font-weight:600;padding-right:10px}
+.timeline p{font-size:13px;line-height:19px;padding-right:10px}
+.cycle .facts{display:flex;gap:24px;flex-wrap:wrap;margin-top:20px}
+.cycle .facts div{border-left:3px solid var(--blue);padding-left:12px;flex:1 1 140px}
 .cycle .facts b{display:block;color:var(--ink);font-weight:600;font-size:18px;line-height:24px}
 .cycle .facts span{font-size:13px;line-height:19px;color:var(--charcoal)}
+.cycle .timing-note{font-size:13px;line-height:20px;margin-top:16px;max-width:540px;color:var(--charcoal)}
+.cycle .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;align-items:center}
 .shot{background:#fff;border:1px solid var(--grey-300);padding:8px}
 .shot-cap{font-size:12px;line-height:18px;color:var(--grey-500);margin-top:8px}
 @media (max-width:900px){.cycle .grid{grid-template-columns:1fr}}
-
-/* CTA band */
-.band{background:var(--blue);color:#fff;padding:48px 0}
-.band .wrap{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
-.band h2{color:#fff;font-size:clamp(24px,2.6vw,32px);font-weight:500}
-.band p{color:var(--lavender);font-size:15px;margin-top:6px}
-.band .btns{display:flex;gap:14px;flex-wrap:wrap}
-.band .btn{background:#fff;color:var(--blue);border-color:#fff}
-.band .btn:hover{background:var(--lavender);border-color:var(--lavender)}
-.band .btn.ghost{background:transparent;color:#fff}
-.band .btn.ghost:hover{background:#fff;color:var(--blue)}
+@media (max-width:560px){
+  .timeline{grid-template-columns:1fr;row-gap:16px}
+  .timeline .phase{grid-template-columns:14px 1fr;grid-template-rows:auto auto auto;column-gap:14px;row-gap:2px}
+  .timeline .rail{grid-column:1;grid-row:1/4;border-right:0;width:14px}
+  .timeline .when,.timeline h3,.timeline p{grid-column:2}
+  .timeline .phase:last-child .rail{border-right:0}
+}
 
 footer{padding:22px 0;font-size:13px;line-height:20px;color:var(--grey-500)}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
@@ -133,7 +138,7 @@ footer .legal{width:100%;font-size:11px;line-height:17px;border-top:1px solid va
 <header class="nav">
   <div class="wrap">
     <a href="#top" aria-label="Alakai"><img src="assets/alakai-wordmark-blue-2x.png" alt="Alakai"></a>
-    <a class="book" id="navCal" href="#" target="_blank" rel="noopener">Book a demo →</a>
+    <a class="book" id="navCal" href="#" target="_blank" rel="noopener">Book a trial call →</a>
   </div>
 </header>
 
@@ -148,20 +153,20 @@ footer .legal{width:100%;font-size:11px;line-height:17px;border-top:1px solid va
   </svg>
   <div class="wrap">
     <div>
-      <div class="eyebrow">For FMCG commercial, RGM, and account teams</div>
+      <div class="eyebrow">For sales planning, RGM, and account teams</div>
       <h1>See what changed.<br>Know where to act.<br>Measure what worked.</h1>
       <div class="rule"></div>
-      <p class="lede">Alakai connects what happened at the shelf with your plans and economics, so your team can change the forward plan before the window closes. Start with one account, in 90 days.</p>
+      <p class="lede"><strong>Your next 12 weeks of promotions are already committed.</strong> Alakai connects what ran at the shelf with your plan and economics, then brings team and buyer feedback into one proposal you can agree before the next promotions lock. Start with one account, in 90 days.</p>
       <div class="proof">
         <div><b>45 banners</b><span>Observed grocery coverage, growing monthly</span></div>
-        <div><b>Weekly · store-level</b><span>Shelf price, promotions, coupons, competitors</span></div>
-        <div><b>Expert-approved</b><span>Deterministic facts. Your team decides.</span></div>
+        <div><b>Weekly · store-level</b><span>Shelf prices, promotions, coupons, competitors</span></div>
+        <div><b>Your team decides</b><span>Evidence, feedback, and approvals in one place</span></div>
       </div>
     </div>
 
     <form class="card" id="leadForm" novalidate>
-      <h2>Request a demo</h2>
-      <p class="sub">We will reach out within one business day to set it up.</p>
+      <h2>Explore a 90-day trial</h2>
+      <p class="sub">One account, your available data, and the time you need to agree a change. We follow up within one business day.</p>
       <div class="field"><label for="f_name">Name</label><input id="f_name" name="name" type="text" autocomplete="name" required></div>
       <div class="field-row">
         <div class="field"><label for="f_email">Work email</label><input id="f_email" name="email" type="email" autocomplete="email" required></div>
@@ -169,12 +174,12 @@ footer .legal{width:100%;font-size:11px;line-height:17px;border-top:1px solid va
       </div>
       <div class="field"><label for="f_company">Company</label><input id="f_company" name="company" type="text" autocomplete="organization"></div>
       <input type="hidden" name="source" value="tryalakai.com">
-      <button class="btn" type="submit">Request my demo</button>
-      <div class="form-ok" id="formOk"></div>
+      <button class="btn" type="submit">Discuss my trial</button>
+      <div class="form-ok" id="formOk" role="status" aria-live="polite"></div>
       <div class="or">or</div>
       <a class="cal" id="cardCal" href="#" target="_blank" rel="noopener">
         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#2C2D8E" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="20" height="18"/><path d="M3 10h20M8 2v6M18 2v6"/><rect x="7" y="14" width="4" height="4" fill="#2C2D8E" stroke="none"/></svg>
-        Pick a time on the calendar now
+        Book a trial call on the calendar now
       </a>
       <p class="fine">We only use your details to follow up about Alakai. No lists, no sharing.</p>
     </form>
@@ -187,29 +192,29 @@ footer .legal{width:100%;font-size:11px;line-height:17px;border-top:1px solid va
     <div class="head">
       <div>
         <div class="eyebrow">How it works</div>
-        <h2 style="margin-top:12px">One source of truth for the shelf and your plan.</h2>
+        <h2 style="margin-top:12px">One proposal your team and your buyer can move forward.</h2>
       </div>
-      <p>Your systems are right. They were never built to agree. Alakai closes the loop from what happened in the aisle to what your leaders approve next.</p>
+      <p>Your systems are right. They were never built to agree. Alakai closes the loop from what happened in the aisle to a proposal your leaders approve, your buyer accepts, and your plan records.</p>
     </div>
     <div class="loop">
       <div class="s">
         <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="#2C2D8E" stroke-width="2" aria-hidden="true"><path d="M2 22c6-9 13-13 20-13s14 4 20 13c-6 9-13 13-20 13S8 31 2 22z"/><circle cx="22" cy="22" r="6" fill="#2C2D8E" stroke="none"/></svg>
-        <h3>SEE</h3><p>What ran at the shelf: price, promotions, coupon stacking, availability, and competitor moves.</p>
+        <h3>SEE</h3><p>Connect what ran at the shelf, including price, coupons, stacking, and competitor moves, with your sales and manufacturer economics.</p>
         <svg class="arrow" viewBox="0 0 26 26" aria-hidden="true"><path d="M8 5l9 8-9 8" fill="none" stroke="#2C2D8E" stroke-width="2"/></svg>
       </div>
       <div class="s">
         <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="#2C2D8E" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><rect x="24" y="4" width="16" height="16"/><rect x="4" y="24" width="16" height="16"/><rect x="24" y="24" width="16" height="16" fill="#2C2D8E"/><path d="M28 32l3 3 6-7" stroke="#fff"/></svg>
-        <h3>DECIDE</h3><p>Deterministic event economics show which promotions to stop, change, or accelerate.</p>
+        <h3>DECIDE</h3><p>Event economics your analysts can reproduce show which promotions to stop, change, or accelerate. Shape them into one package of linked changes within your budget and calendar.</p>
         <svg class="arrow" viewBox="0 0 26 26" aria-hidden="true"><path d="M8 5l9 8-9 8" fill="none" stroke="#2C2D8E" stroke-width="2"/></svg>
       </div>
       <div class="s">
         <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="#2C2D8E" stroke-width="2" aria-hidden="true"><path d="M4 22h30"/><path d="M26 12l12 10-12 10"/><rect x="4" y="4" width="10" height="10" fill="#2C2D8E" stroke="none"/><rect x="4" y="30" width="10" height="10" fill="#2C2D8E" stroke="none"/></svg>
-        <h3>ACT</h3><p>Your experts approve a provenance-cited action pack and move it into the plan while the window is open.</p>
+        <h3>ACT</h3><p>Bring internal reviews and buyer feedback into the proposal as they arrive. Track revisions and approvals, then confirm the agreed changes in the plan before they lock.</p>
         <svg class="arrow" viewBox="0 0 26 26" aria-hidden="true"><path d="M8 5l9 8-9 8" fill="none" stroke="#2C2D8E" stroke-width="2"/></svg>
       </div>
       <div class="s">
         <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="#2C2D8E" stroke-width="2" aria-hidden="true"><path d="M4 40h36"/><rect x="7" y="26" width="7" height="14"/><rect x="18.5" y="16" width="7" height="24" fill="#2C2D8E"/><rect x="30" y="8" width="7" height="32"/></svg>
-        <h3>MEASURE</h3><p>Approved changes are snapshotted so you can see what actually worked.</p>
+        <h3>MEASURE</h3><p>After the changed promotions run, compare outcomes with the original estimate. Early reads and settled financial results improve the next proposal.</p>
       </div>
     </div>
   </div>
@@ -219,36 +224,42 @@ footer .legal{width:100%;font-size:11px;line-height:17px;border-top:1px solid va
   <div class="wrap grid">
     <div>
       <div class="eyebrow">Your first 90 days</div>
-      <h2 style="margin-top:12px">One account. Ninety days. A plan your leaders can approve.</h2>
-      <p class="lede">The 90-Day Trade Performance Action Cycle turns in-scope promotions and the forward plan into fact-based priorities, reviewed with your account and RGM leaders.</p>
-      <svg class="timeline" viewBox="0 0 560 110" aria-label="90-day timeline: Baseline weeks 1 to 3, Prioritize weeks 4 to 8, Decide and record weeks 9 to 12">
-        <rect x="0" y="34" width="140" height="14" fill="#ABACD2"/>
-        <rect x="140" y="34" width="233" height="14" fill="#2C2D8E"/>
-        <rect x="373" y="34" width="187" height="14" fill="#1F2066"/>
-        <g fill="#2C2D8E" font-family="Poppins,Segoe UI,Arial,sans-serif" font-size="11" font-weight="600" letter-spacing="1.2">
-          <text x="0" y="22">WEEKS 1–3</text><text x="140" y="22">WEEKS 4–8</text><text x="373" y="22">WEEKS 9–12</text>
-        </g>
-        <g fill="#001810" font-family="Poppins,Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">
-          <text x="0" y="74">Baseline</text><text x="140" y="74">Prioritize</text><text x="373" y="74">Decide and record</text>
-        </g>
-        <g fill="#404040" font-family="Poppins,Segoe UI,Arial,sans-serif" font-size="11.5">
-          <text x="0" y="94">Connect approved inputs</text><text x="140" y="94">Stop, change, accelerate priorities</text><text x="373" y="94">Action pack, approvals, baseline</text>
-        </g>
-        <path d="M139 30v22M372 30v22" stroke="#fff" stroke-width="2"/>
-      </svg>
-      <div class="facts">
-        <div><b>One account</b><span>Your choice of banner</span></div>
-        <div><b>6-month forward view</b><span>Future promotions reviewed</span></div>
-        <div><b>Read-only start</b><span>Nothing changes without your approval</span></div>
+      <h2 style="margin-top:12px">One account. One proposal. Agreed before it locks.</h2>
+      <p class="lede">Promotions typically lock about 12 weeks before they run. The trial works on the ones you can still change, up to six months out, and paces the calendar to your decision dates and buyer lead time.</p>
+      <div class="timeline" role="list" aria-label="90-day trial phases">
+        <div class="phase" role="listitem">
+          <span class="when">Weeks 1–3<small>At kickoff</small></span>
+          <span class="rail" aria-hidden="true"></span>
+          <h3>Set the scope</h3>
+          <p>Account, decision dates, approved data</p>
+        </div>
+        <div class="phase" role="listitem">
+          <span class="when">Weeks 4–8<small>As inputs arrive</small></span>
+          <span class="rail" aria-hidden="true"></span>
+          <h3>Develop the proposal</h3>
+          <p>Event facts, priorities, team input, buyer feedback</p>
+        </div>
+        <div class="phase" role="listitem">
+          <span class="when">Weeks 9–12<small>Before the lock</small></span>
+          <span class="rail" aria-hidden="true"></span>
+          <h3>Agree and record</h3>
+          <p>Approvals, confirmed plan changes, measurement baseline</p>
+        </div>
       </div>
+      <div class="facts">
+        <div><b>One account</b><span>Your customer and commercial team</span></div>
+        <div><b>Read-only start</b><span>Nothing changes without your approval</span></div>
+        <div><b>Time to agree</b><span>Review and negotiation built into the plan</span></div>
+      </div>
+      <p class="timing-note">Results are measured after the changed promotions run: early reads first, settled financials typically three to four months later.</p>
       <div class="ctas">
-        <a class="btn" href="#top">Request a demo</a>
-        <a class="btn secondary" id="bandCal" href="#" target="_blank" rel="noopener">Book a time on the calendar</a>
+        <a class="btn" href="#leadForm">Explore a trial</a>
+        <a class="btn secondary" id="bandCal" href="#" target="_blank" rel="noopener">Book a trial call</a>
       </div>
     </div>
     <div>
       <div class="shot"><img src="assets/post-event-insights.png" alt="Alakai post-event insights: manufacturer ROI, net sales per trade dollar, incremental gross sales and margin versus the 52-week benchmark"></div>
-      <p class="shot-cap">Post-event insights from the Alakai platform, sample event.</p>
+      <p class="shot-cap">Sample post-event insights from Alakai. Event evidence informs the proposal alongside team input and buyer feedback.</p>
     </div>
   </div>
 </section>
@@ -257,7 +268,7 @@ footer .legal{width:100%;font-size:11px;line-height:17px;border-top:1px solid va
   <div class="wrap">
     <img src="assets/alakai-wordmark-blue-2x.png" alt="Alakai">
     <div>Alakai Labs, Inc. © 2026 <a href="https://alakailabs.com/">alakailabs.com</a><a href="https://alakailabs.com/data-security-and-trust/">Data security</a></div>
-    <div class="legal">Coverage applies to covered banners and categories. Commercial calculations are deterministic; recommendations are reviewed and approved by your experts. Opportunity figures are annualized opportunity, not realized impact.</div>
+    <div class="legal">Coverage and trial scope depend on the selected account, covered banners, and available data. Commercial calculations are deterministic and reproducible; recommendations are reviewed and approved by your team. Expected benefits are annualized estimates, not realized impact; financial results are evaluated after execution and settlement.</div>
   </div>
 </footer>
 
@@ -265,7 +276,7 @@ footer .legal{width:100%;font-size:11px;line-height:17px;border-top:1px solid va
 /* ---------- CONFIG: swap before publishing ---------- */
 var CONFIG = {
   calendarUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3ZODiaE1xRRjrfAIcmAlv8qBab3uAePzYY3nNhO2TQvm-7yzCmERpYA3OzffrwOMW4tCx7qk0Z?gv=true&utm_source=tryalakai&utm_medium=landing",
-  contactEmail: "hello@tryalakai.com",   // inbox that receives demo requests
+  contactEmail: "hello@tryalakai.com",   // inbox that receives trial enquiries
   formEndpoint: ""                       // Formspree / HubSpot / Netlify endpoint; empty = mailto fallback
 };
 (function(){
@@ -279,14 +290,14 @@ var CONFIG = {
     var d = {}; new FormData(form).forEach(function(v,k){ d[k] = v; });
     if(CONFIG.formEndpoint){
       fetch(CONFIG.formEndpoint, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(d)})
-        .then(function(){ show('Thank you. We will be in touch within one business day.'); form.reset(); })
+        .then(function(response){ if(!response.ok) throw new Error('Request was not accepted'); show('Thank you. We will be in touch within one business day to discuss your trial.'); form.reset(); })
         .catch(function(){ mailto(d); });
     } else { mailto(d); }
   });
   function mailto(d){
     var body = 'Name: '+d.name+'\nWork email: '+d.email+'\nPhone: '+d.phone+'\nCompany: '+(d.company||'')+'\nSource: tryalakai.com';
-    window.location.href = 'mailto:'+CONFIG.contactEmail+'?subject='+encodeURIComponent('Demo request via tryalakai.com')+'&body='+encodeURIComponent(body);
-    show('Thank you. Your email client should have opened with your details. If it did not, email '+CONFIG.contactEmail+'.');
+    window.location.href = 'mailto:'+CONFIG.contactEmail+'?subject='+encodeURIComponent('Trial enquiry via tryalakai.com')+'&body='+encodeURIComponent(body);
+    show('Your email app should open with your details. Send the email to complete your enquiry. If it did not open, email '+CONFIG.contactEmail+'.');
   }
   function show(m){ ok.textContent = m; ok.classList.add('show'); }
 })();
