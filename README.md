@@ -4,9 +4,9 @@ Outbound landing page for Alakai. Static, no build step.
 
 ## Files
 
-- `index.html` – the live page. Two screens, two calls to action: a trial-enquiry form (name, work email, phone, company) and a link to book a trial call on the calendar. Positioning: the 12-week promotion lock as the hook, the locked campaign line as the headline, SEE / DECIDE / ACT / MEASURE with buyer agreement inside ACT, and a 90-day trial paced to the customer's decision dates.
-- `long-form.html` – the earlier long-form version, kept as a copy source for marketing. Not linked from the live page.
-- `assets/` – brand logos and arrow motif from the Alakai brand skill; product screenshots and founder photo from alakailabs.com.
+- `index.html` – the live page. Positioned on the MVP product brief: an individual subscription for account teams at FMCG manufacturers, delivered through the Alakai connector and skills in a personal Claude account. Sections: hero with an illustrative weekly brief, why weekly, what is in the brief, five steps from signup to first brief, four Pro insights, plans and prices with a monthly/annual toggle, FAQ, final call to action.
+- `long-form.html` – the earlier long-form version of the planning-cycle positioning, kept as a copy source. Not linked from the live page.
+- `assets/` – brand logos and arrow motif from the Alakai brand skill; product screenshots and founder photo from alakailabs.com (the screenshots show the earlier planning product and are not used on the live page).
 
 ## Run locally
 
@@ -22,12 +22,11 @@ Edit the `CONFIG` block at the bottom of `index.html`:
 
 | Key | Current | Change to |
 |---|---|---|
-| `calendarUrl` | Existing Google Calendar booking link from alakailabs.com, tagged `utm_source=tryalakai` | Keep, or a dedicated demo schedule |
-| `contactEmail` | `hello@tryalakai.com` (placeholder) | The inbox that receives trial enquiries |
-| `formEndpoint` | empty | A Formspree, HubSpot, or Netlify Forms endpoint so requests land in a CRM. While empty the form opens a pre-filled email |
+| `signupUrl` | `https://app.tryalakai.com/signup` (placeholder) | The real account-creation URL. The page appends `?plan=trial|basic|pro` and UTM tags |
+| `calendarUrl` | Existing Google Calendar booking link, tagged `utm_source=tryalakai` | Keep, or a dedicated Enterprise call schedule |
 
 Refresh the banner count (currently 45) before each publish, per the Claims and Proof Register.
 
 ## Claim discipline
 
-Copy stays inside the Claims and Proof Register v0.9: coverage limited to covered banners, deterministic calculations (footer), expert approval, read-only start, estimates labelled as annualized and never as realized impact. "Promotions typically lock about 12 weeks before they run" is a general market statement, qualified with "typically". No pricing on the page; the internal-only competitive story and prevented-loss figures are not used.
+Copy stays inside the MVP product brief and the Claims and Proof Register: coverage limited to observed banners with store counts, geography and dates shown; observed prices and offers only; stacking combined only when verified; missing observations distinct from no change; no funding, lift, margin or ROI inference; assortment appearance and disappearance described as observations. "About ten minutes" to first brief is the brief's design target and is phrased as such. Prices and plan limits match the brief's plans table and coverage defaults. Claude access is stated as separate, and the footer disclaims affiliation with Anthropic.

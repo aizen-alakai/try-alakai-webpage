@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Try Alakai · See what changed. Know where to act.</title>
-<meta name="description" content="Your next 12 weeks of promotions are already committed. Alakai connects what ran at the shelf with your plan and economics, and brings team and buyer feedback into one proposal you can agree before the next promotions lock. Explore a 90-day trial on one account.">
-<meta property="og:title" content="See what changed. Know where to act. Measure what worked.">
-<meta property="og:description" content="Improve the promotions you can still change. One account, one proposal, agreed before it locks. Explore a 90-day trial.">
+<title>Try Alakai · Your weekly competitive shelf brief, inside Claude</title>
+<meta name="description" content="Alakai delivers a weekly brief on promotions, price conditions and shelf prices for your brand and its competitors at one retailer, retrieved inside your personal Claude account, with the source data in Excel. Free for 30 days, no card required.">
+<meta property="og:title" content="See what moved at the shelf last week. Every week.">
+<meta property="og:description" content="A weekly competitive brief for account teams at FMCG manufacturers. One retailer, your brand and three competitors, source data in Excel. Free for 30 days.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tryalakai.com/">
 <link rel="icon" href="assets/alakai-logo-primary.png">
@@ -26,106 +26,164 @@ html{scroll-behavior:smooth}
 body{margin:0;font-family:var(--font);color:var(--text);background:#fff;font-size:17px;line-height:27px}
 img{max-width:100%;display:block}
 a{color:var(--blue)}
-h1,h2,h3{margin:0;color:var(--ink);font-weight:500;line-height:1.08}
+h1,h2,h3,h4{margin:0;color:var(--ink);font-weight:500;line-height:1.08}
 p{margin:0}
+ul,ol{margin:0;padding:0}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 .eyebrow{color:var(--blue);font-weight:500;font-size:13px;letter-spacing:.14em;text-transform:uppercase;line-height:18px}
-.btn{display:inline-block;background:var(--blue);color:#fff;font-weight:500;font-size:16px;line-height:22px;padding:16px 32px;border:2px solid var(--blue);border-radius:0;text-decoration:none;cursor:pointer;font-family:var(--font);transition:background .2s,border-color .2s;text-align:center}
+.btn{display:inline-block;background:var(--blue);color:#fff;font-weight:500;font-size:16px;line-height:22px;padding:15px 30px;border:2px solid var(--blue);border-radius:0;text-decoration:none;cursor:pointer;font-family:var(--font);transition:background .2s,border-color .2s,color .2s;text-align:center}
 .btn:hover{background:var(--blue-bright);border-color:var(--blue-bright)}
 .btn.secondary{background:transparent;color:var(--blue)}
 .btn.secondary:hover{background:var(--blue);color:#fff}
+.btn.light{background:#fff;color:var(--blue);border-color:#fff}
+.btn.light:hover{background:var(--lavender);border-color:var(--lavender);color:var(--blue-deep)}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn.ghost:hover{background:#fff;color:var(--blue)}
+.note{font-size:13px;line-height:20px;color:var(--grey-500)}
+section{padding:72px 0}
+.sec-head{max-width:720px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(28px,3.2vw,40px);font-weight:400;margin-top:12px}
+.sec-head p{margin-top:14px;font-size:17px;line-height:27px}
 
 /* NAV */
-.nav{background:#fff;border-bottom:1px solid var(--grey-300)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav{background:#fff;border-bottom:1px solid var(--grey-300);position:sticky;top:0;z-index:10}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
 .nav img{height:28px;width:auto}
-.nav a.book{color:var(--blue);text-decoration:none;font-weight:500;font-size:15px}
-.nav a.book:hover{text-decoration:underline}
+.nav nav{display:flex;align-items:center;gap:28px}
+.nav nav a{color:var(--charcoal);text-decoration:none;font-weight:500;font-size:15px}
+.nav nav a:hover{color:var(--blue)}
+.nav .btn{padding:10px 20px;font-size:14px}
+.nav nav a.btn{color:#fff}
+@media (max-width:760px){.nav nav a:not(.btn){display:none}}
 
-/* SCREEN 1: HERO + FORM */
-.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blue-deep) 0%,var(--blue) 72%,var(--blue-bright) 100%);color:#fff;min-height:clamp(540px,calc(100vh - 68px),720px);display:flex;align-items:center;padding:48px 0}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blue-deep) 0%,var(--blue) 72%,var(--blue-bright) 100%);color:#fff;padding:64px 0 72px}
 .hero svg.streaks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;width:100%}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .hero .eyebrow{color:var(--lavender)}
-.hero h1{color:#fff;font-size:clamp(34px,4.6vw,58px);margin:18px 0 22px}
+.hero h1{color:#fff;font-size:clamp(34px,4.4vw,56px);margin:18px 0 22px}
 .hero .rule{width:64px;height:3px;background:#fff;margin:0 0 24px}
 .hero .lede{font-size:19px;line-height:30px;color:rgba(255,255,255,.9);max-width:560px}
 .hero .lede strong{color:#fff;font-weight:600}
-.hero .proof{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:600px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:30px}
+.hero .ctas .note{color:var(--lavender);flex-basis:100%}
+.hero .proof{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:600px}
 .hero .proof div{border-top:1px solid rgba(255,255,255,.35);padding-top:12px}
-.hero .proof b{display:block;color:#fff;font-size:22px;font-weight:600;line-height:1.1}
+.hero .proof b{display:block;color:#fff;font-size:20px;font-weight:600;line-height:1.15}
 .hero .proof span{font-size:13px;line-height:19px;color:var(--lavender)}
-@media (max-width:960px){.hero .wrap{grid-template-columns:1fr}.hero{min-height:0;padding:48px 0 56px}}
+@media (max-width:960px){.hero .wrap{grid-template-columns:1fr}.hero{padding:48px 0 56px}}
 @media (max-width:520px){.hero .proof{grid-template-columns:1fr 1fr}}
 
-/* Form card */
-.card{background:#fff;color:var(--text);padding:32px 32px 28px;border:1px solid var(--grey-300)}
-.card h2{font-size:24px;font-weight:600;margin-bottom:4px}
-.card .sub{font-size:14px;line-height:21px;color:var(--charcoal);margin-bottom:14px}
-.field{margin-top:12px}
-.field label{display:block;font-size:12px;font-weight:600;color:var(--ink);letter-spacing:.04em;margin-bottom:5px}
-.field input{width:100%;border:1px solid var(--grey-300);border-radius:0;padding:12px 14px;font:inherit;font-size:16px;line-height:22px;color:var(--ink);background:#fff}
-.field input:focus{outline:2px solid var(--blue);outline-offset:-1px;border-color:var(--blue)}
-.field input.err{border-color:#B00020}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card .btn{width:100%;margin-top:18px}
-.card .or{display:flex;align-items:center;gap:12px;margin:18px 0 12px;color:var(--grey-500);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
-.card .or::before,.card .or::after{content:"";flex:1;height:1px;background:var(--grey-300)}
-.card .cal{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--blue);font-weight:500;font-size:15px;line-height:22px}
-.card .cal svg{flex:none}
-.card .cal:hover{text-decoration:underline}
-.card .fine{font-size:11px;line-height:16px;color:var(--grey-500);margin-top:14px}
-.form-ok{display:none;background:var(--grey-100);border-left:4px solid var(--blue);padding:14px 16px;margin-top:14px;font-size:14px;line-height:21px}
-.form-ok.show{display:block}
-@media (max-width:520px){.field-row{grid-template-columns:1fr}.card{padding:24px}}
+/* Illustrative brief */
+.brief{background:#fff;color:var(--text);border:1px solid var(--grey-300);font-size:13px;line-height:19px}
+.brief .bar{background:var(--grey-100);padding:10px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--grey-300)}
+.brief .bar b{color:var(--blue);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.brief .bar span{color:var(--grey-500);font-size:11px}
+.brief .meta{padding:14px 18px 10px;display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;border-bottom:1px solid var(--grey-100)}
+.brief .meta div{font-size:12px;line-height:18px;color:var(--charcoal)}
+.brief .meta div b{display:block;color:var(--ink);font-weight:600}
+.brief .blk{padding:12px 18px;border-bottom:1px solid var(--grey-100)}
+.brief .blk h4{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:6px}
+.brief .row{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
+.brief .row span:last-child{color:var(--charcoal);white-space:nowrap}
+.brief .row .tag{display:inline-block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:1px 6px;border:1px solid var(--grey-300);color:var(--charcoal);margin-right:6px;vertical-align:1px}
+.brief .row .tag.on{border-color:var(--blue);color:var(--blue)}
+.brief .cascade{display:grid;grid-template-columns:auto 1fr;gap:2px 12px}
+.brief .cascade em{font-style:normal;color:var(--charcoal)}
+.brief .dl{padding:12px 18px;display:flex;align-items:center;gap:10px;color:var(--blue);font-weight:500}
+.brief .dl svg{flex:none}
+.brief-cap{font-size:12px;line-height:18px;color:var(--lavender);margin-top:10px}
+@media (max-width:520px){.brief .row{flex-direction:column;gap:0}.brief .row span:last-child{white-space:normal;font-size:12px}}
 
-/* SCREEN 2 */
-.how{padding:48px 0 44px}
-.how .head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:28px}
-.how h2{font-size:clamp(28px,3vw,38px);font-weight:400;max-width:620px}
-.how .head p{max-width:420px;font-size:15px;line-height:24px}
-.loop{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--grey-300)}
-.loop .s{padding:22px 22px 20px;border-left:1px solid var(--grey-300);position:relative}
-.loop .s:first-child{border-left:0}
-.loop .s svg.ic{width:40px;height:40px;display:block;margin-bottom:14px}
-.loop .s h3{font-size:20px;color:var(--blue);letter-spacing:.03em;margin-bottom:6px;font-weight:600}
-.loop .s p{font-size:14px;line-height:21px}
-.loop .s .arrow{position:absolute;right:-13px;top:50%;transform:translateY(-50%);width:26px;height:26px;background:#fff;z-index:2}
-.loop .s:last-child .arrow{display:none}
-@media (max-width:900px){.how .head{flex-direction:column;align-items:start}.loop{grid-template-columns:1fr 1fr}.loop .s:nth-child(3){border-left:0}.loop .s:nth-child(n+3){border-top:1px solid var(--grey-300)}.loop .s:nth-child(2) .arrow{display:none}}
-@media (max-width:520px){.loop{grid-template-columns:1fr}.loop .s{border-left:0;border-top:1px solid var(--grey-300)}.loop .s:first-child{border-top:0}.loop .arrow{display:none}}
+/* WHY WEEKLY */
+.why{background:#fff}
+.why .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.why .grid div{border-top:3px solid var(--blue);padding-top:18px}
+.why h3{font-size:20px;font-weight:600;margin-bottom:10px}
+.why p{font-size:15px;line-height:24px}
+@media (max-width:820px){.why .grid{grid-template-columns:1fr}}
 
-.cycle{background:var(--grey-100);padding:48px 0 52px}
-.cycle .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.cycle h2{font-size:clamp(28px,3vw,38px);font-weight:400;margin-bottom:12px}
-.cycle .lede{font-size:16px;line-height:26px;max-width:520px}
-.timeline{margin-top:22px;width:100%;max-width:540px;display:grid;grid-template-columns:140fr 233fr 187fr}
-.timeline .phase{min-width:0;display:grid;grid-template-rows:auto 14px auto auto;row-gap:8px;align-content:start}
-.timeline .when{padding-right:10px;color:var(--blue);font-size:12px;line-height:17px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
-.timeline .when small{display:block;color:var(--grey-500);font-weight:500;letter-spacing:0;text-transform:none}
-.timeline .rail{display:block;background:var(--blue);border-right:2px solid #fff}
-.timeline .phase:first-child .rail{background:var(--lavender)}
-.timeline .phase:last-child .rail{background:var(--blue-deep);border-right:0}
-.timeline h3{font-size:16px;line-height:22px;font-weight:600;padding-right:10px}
-.timeline p{font-size:13px;line-height:19px;padding-right:10px}
-.cycle .facts{display:flex;gap:24px;flex-wrap:wrap;margin-top:20px}
-.cycle .facts div{border-left:3px solid var(--blue);padding-left:12px;flex:1 1 140px}
-.cycle .facts b{display:block;color:var(--ink);font-weight:600;font-size:18px;line-height:24px}
-.cycle .facts span{font-size:13px;line-height:19px;color:var(--charcoal)}
-.cycle .timing-note{font-size:13px;line-height:20px;margin-top:16px;max-width:540px;color:var(--charcoal)}
-.cycle .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;align-items:center}
-.shot{background:#fff;border:1px solid var(--grey-300);padding:8px}
-.shot-cap{font-size:12px;line-height:18px;color:var(--grey-500);margin-top:8px}
-@media (max-width:900px){.cycle .grid{grid-template-columns:1fr}}
-@media (max-width:560px){
-  .timeline{grid-template-columns:1fr;row-gap:16px}
-  .timeline .phase{grid-template-columns:14px 1fr;grid-template-rows:auto auto auto;column-gap:14px;row-gap:2px}
-  .timeline .rail{grid-column:1;grid-row:1/4;border-right:0;width:14px}
-  .timeline .when,.timeline h3,.timeline p{grid-column:2}
-  .timeline .phase:last-child .rail{border-right:0}
-}
+/* WHAT'S IN THE BRIEF */
+.inside{background:var(--grey-100)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--grey-300);background:#fff}
+.cards .c{padding:26px 24px 24px;border-left:1px solid var(--grey-300)}
+.cards .c:first-child{border-left:0}
+.cards svg{width:40px;height:40px;display:block;margin-bottom:14px}
+.cards h3{font-size:19px;font-weight:600;color:var(--blue);margin-bottom:8px}
+.cards p{font-size:14px;line-height:21px}
+@media (max-width:900px){.cards{grid-template-columns:1fr 1fr}.cards .c:nth-child(3){border-left:0}.cards .c:nth-child(n+3){border-top:1px solid var(--grey-300)}}
+@media (max-width:520px){.cards{grid-template-columns:1fr}.cards .c{border-left:0;border-top:1px solid var(--grey-300)}.cards .c:first-child{border-top:0}}
+.inside .fine{margin-top:18px;max-width:820px}
 
-footer{padding:22px 0;font-size:13px;line-height:20px;color:var(--grey-500)}
+/* STEPS */
+.steps .grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.steps ol{list-style:none;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--grey-300)}
+.steps li:last-child{border-bottom:1px solid var(--grey-300)}
+.steps li::before{content:counter(s);width:44px;height:44px;background:var(--blue);color:#fff;font-weight:600;font-size:18px;display:flex;align-items:center;justify-content:center}
+.steps li b{display:block;color:var(--ink);font-weight:600;font-size:17px;line-height:24px;margin-bottom:4px}
+.steps li p{font-size:15px;line-height:23px}
+.steps .aside{background:var(--grey-100);padding:32px}
+.steps .aside h3{font-size:22px;font-weight:600;margin-bottom:12px}
+.steps .aside p{font-size:15px;line-height:24px}
+.steps .aside p+p{margin-top:12px}
+.steps .aside .btn{margin-top:22px}
+@media (max-width:900px){.steps .grid{grid-template-columns:1fr}}
+
+/* PRO INSIGHTS */
+.pro{background:var(--blue);color:#fff}
+.pro .eyebrow{color:var(--lavender)}
+.pro .sec-head h2{color:#fff}
+.pro .sec-head p{color:rgba(255,255,255,.88)}
+.pro .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(255,255,255,.25)}
+.pro .grid div{background:var(--blue);padding:28px 28px 26px}
+.pro h3{color:#fff;font-size:20px;font-weight:600;margin-bottom:10px}
+.pro .grid p{font-size:15px;line-height:24px;color:rgba(255,255,255,.88)}
+.pro .fine{margin-top:22px;color:var(--lavender);max-width:760px}
+@media (max-width:760px){.pro .grid{grid-template-columns:1fr}}
+
+/* PRICING */
+.pricing .toggle{display:inline-flex;border:1px solid var(--grey-300);margin-bottom:28px}
+.pricing .toggle button{font:inherit;font-weight:500;font-size:14px;padding:10px 20px;border:0;background:#fff;color:var(--charcoal);cursor:pointer}
+.pricing .toggle button.on{background:var(--blue);color:#fff}
+.pricing .toggle button small{font-weight:400;color:inherit;opacity:.8;margin-left:6px}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--grey-300)}
+.plan{padding:28px 26px 26px;border-left:1px solid var(--grey-300);display:flex;flex-direction:column}
+.plan:first-child{border-left:0}
+.plan.hi{background:var(--grey-100)}
+.plan h3{font-size:22px;font-weight:600}
+.plan .who{font-size:13px;line-height:19px;color:var(--charcoal);margin-top:4px;min-height:38px}
+.plan .price{margin:18px 0 4px;color:var(--ink)}
+.plan .price b{font-size:40px;font-weight:600;line-height:1}
+.plan .price span{font-size:14px;color:var(--charcoal)}
+.plan .bill{font-size:12px;line-height:18px;color:var(--grey-500);min-height:36px}
+.plan ul{list-style:none;margin:18px 0 22px;flex:1}
+.plan li{font-size:14px;line-height:21px;padding:6px 0 6px 20px;position:relative;border-top:1px solid var(--grey-300)}
+.plan li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:8px;background:var(--blue)}
+.plan .btn{width:100%}
+.pricing .fine{margin-top:20px;max-width:820px}
+@media (max-width:1000px){.plans{grid-template-columns:1fr 1fr}.plan:nth-child(3){border-left:0}.plan:nth-child(n+3){border-top:1px solid var(--grey-300)}}
+@media (max-width:560px){.plans{grid-template-columns:1fr}.plan{border-left:0;border-top:1px solid var(--grey-300)}.plan:first-child{border-top:0}}
+
+/* FAQ */
+.faq{background:var(--grey-100)}
+.faq .list{max-width:820px}
+.faq details{border-top:1px solid var(--grey-300)}
+.faq details:last-child{border-bottom:1px solid var(--grey-300)}
+.faq summary{cursor:pointer;list-style:none;font-weight:600;color:var(--ink);font-size:17px;line-height:26px;padding:18px 40px 18px 0;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:14px;color:var(--blue);font-size:26px;font-weight:400}
+.faq details[open] summary::after{content:"−"}
+.faq details p{font-size:15px;line-height:24px;padding:0 0 20px;max-width:720px}
+
+/* FINAL CTA */
+.final{background:linear-gradient(135deg,var(--blue-deep),var(--blue));color:#fff;text-align:center}
+.final h2{color:#fff;font-size:clamp(28px,3.2vw,40px);font-weight:400}
+.final p{margin:16px auto 0;max-width:600px;color:rgba(255,255,255,.88)}
+.final .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.final .note{color:var(--lavender);margin-top:16px}
+
+footer{padding:26px 0;font-size:13px;line-height:20px;color:var(--grey-500)}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
 footer img{height:22px;width:auto}
 footer a{color:var(--charcoal);text-decoration:none;margin-left:18px;font-weight:500}
@@ -138,11 +196,17 @@ footer .legal{width:100%;font-size:11px;line-height:17px;border-top:1px solid va
 <header class="nav">
   <div class="wrap">
     <a href="#top" aria-label="Alakai"><img src="assets/alakai-wordmark-blue-2x.png" alt="Alakai"></a>
-    <a class="book" id="navCal" href="#" target="_blank" rel="noopener">Book a trial call →</a>
+    <nav>
+      <a href="#inside">The brief</a>
+      <a href="#steps">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn signup" href="#">Start free trial</a>
+    </nav>
   </div>
 </header>
 
-<!-- SCREEN 1 -->
+<!-- HERO -->
 <section class="hero" id="top">
   <svg class="streaks" viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden="true">
     <g fill="none" stroke="#fff" stroke-width="1.2">
@@ -153,114 +217,284 @@ footer .legal{width:100%;font-size:11px;line-height:17px;border-top:1px solid va
   </svg>
   <div class="wrap">
     <div>
-      <div class="eyebrow">For sales planning, RGM, and account teams</div>
-      <h1>See what changed.<br>Know where to act.<br>Measure what worked.</h1>
+      <div class="eyebrow">For account teams at FMCG manufacturers</div>
+      <h1>See what moved at the shelf last week.<br>Every week.</h1>
       <div class="rule"></div>
-      <p class="lede"><strong>Your next 12 weeks of promotions are already committed.</strong> Alakai connects what ran at the shelf with your plan and economics, then brings team and buyer feedback into one proposal you can agree before the next promotions lock. Start with one account, in 90 days.</p>
+      <p class="lede"><strong>Your next planning decision may be twelve weeks out. Your competitors move every week.</strong> Alakai delivers a weekly brief on promotions, price conditions and shelf prices for your brand and its competitors at one retailer, inside your personal Claude account, with the source data in Excel.</p>
+      <div class="ctas">
+        <a class="btn light signup" href="#">Start your free 30-day trial</a>
+        <a class="btn ghost" href="#pricing">See plans</a>
+        <span class="note">No card required. Basic access for 30 days, then $38 a month if you continue.</span>
+      </div>
       <div class="proof">
         <div><b>45 banners</b><span>Observed grocery coverage, growing monthly</span></div>
         <div><b>Weekly · store-level</b><span>Shelf prices, promotions, coupons, competitors</span></div>
-        <div><b>Your team decides</b><span>Evidence, feedback, and approvals in one place</span></div>
+        <div><b>No integration</b><span>Nothing to connect from your own systems</span></div>
       </div>
     </div>
 
-    <form class="card" id="leadForm" novalidate>
-      <h2>Explore a 90-day trial</h2>
-      <p class="sub">One account, your available data, and the time you need to agree a change. We follow up within one business day.</p>
-      <div class="field"><label for="f_name">Name</label><input id="f_name" name="name" type="text" autocomplete="name" required></div>
-      <div class="field-row">
-        <div class="field"><label for="f_email">Work email</label><input id="f_email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="f_phone">Phone</label><input id="f_phone" name="phone" type="tel" autocomplete="tel" required></div>
+    <div>
+      <div class="brief" aria-label="Illustrative weekly brief">
+        <div class="bar"><b>Weekly brief</b><span>Latest observation: week ending <span id="wk">—</span></span></div>
+        <div class="meta">
+          <div><b>Retailer</b>Your selected retailer · 3 banners</div>
+          <div><b>Stores observed</b>412 across 6 states</div>
+          <div><b>Watchlist</b>Your brand + 3 competitors</div>
+          <div><b>History</b>Rolling 4 weeks</div>
+        </div>
+        <div class="blk">
+          <h4>Promotions</h4>
+          <div class="row"><span><span class="tag on">Started</span>Competitor A · 2 for $6 · multi-buy</span><span>Banners 1–3</span></div>
+          <div class="row"><span><span class="tag on">Started</span>Competitor C · $1 off · digital coupon</span><span>Banner 2</span></div>
+          <div class="row"><span><span class="tag">Ended</span>Your brand · Buy 2 save $2</span><span>Banners 1, 3</span></div>
+          <div class="row"><span><span class="tag">Active</span>Competitor B · Loyalty price $3.49</span><span>Week 3 of observed run</span></div>
+          <div class="row"><span>Overlap with your active offer</span><span>Competitor A, 2 of 3 banners</span></div>
+        </div>
+        <div class="blk">
+          <h4>Price cascade · your brand 16 oz</h4>
+          <div class="cascade">
+            <em>Regular</em><span>$4.29</span>
+            <em>Loyalty</em><span>$3.99 · continuing, began before window</span>
+            <em>Digital coupon</em><span>−$0.75 · stacking with loyalty verified</span>
+            <em>Lowest verified</em><span><strong>$3.24</strong></span>
+          </div>
+        </div>
+        <div class="blk">
+          <h4>Shelf price changes</h4>
+          <div class="row"><span>Competitor B 14 oz · $3.79 → $3.99</span><span>+5.3% · 3 banners · comparable</span></div>
+          <div class="row"><span>Competitor A 16 oz · no change</span><span>3 banners</span></div>
+          <div class="row"><span>Competitor C 12 oz</span><span>Not observed this week</span></div>
+        </div>
+        <div class="dl">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#2C2D8E" stroke-width="1.8" aria-hidden="true"><path d="M10 3v10M6 9l4 4 4-4M3 17h14"/></svg>
+          Download source data (.xlsx) · store · week · GTIN
+        </div>
       </div>
-      <div class="field"><label for="f_company">Company</label><input id="f_company" name="company" type="text" autocomplete="organization"></div>
-      <input type="hidden" name="source" value="tryalakai.com">
-      <button class="btn" type="submit">Discuss my trial</button>
-      <div class="form-ok" id="formOk" role="status" aria-live="polite"></div>
-      <div class="or">or</div>
-      <a class="cal" id="cardCal" href="#" target="_blank" rel="noopener">
-        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#2C2D8E" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="20" height="18"/><path d="M3 10h20M8 2v6M18 2v6"/><rect x="7" y="14" width="4" height="4" fill="#2C2D8E" stroke="none"/></svg>
-        Book a trial call on the calendar now
-      </a>
-      <p class="fine">We only use your details to follow up about Alakai. No lists, no sharing.</p>
-    </form>
+      <p class="brief-cap">Illustrative example. Your brief uses your configured retailer, banners and brands, and shows the observed stores, geography and dates behind every read-out.</p>
+    </div>
   </div>
 </section>
 
-<!-- SCREEN 2 -->
-<section class="how">
+<!-- WHY WEEKLY -->
+<section class="why">
   <div class="wrap">
-    <div class="head">
-      <div>
-        <div class="eyebrow">How it works</div>
-        <h2 style="margin-top:12px">One proposal your team and your buyer can move forward.</h2>
-      </div>
-      <p>Your systems are right. They were never built to agree. Alakai closes the loop from what happened in the aisle to a proposal your leaders approve, your buyer accepts, and your plan records.</p>
+    <div class="sec-head">
+      <div class="eyebrow">Why weekly</div>
+      <h2>Less collecting. Better prepared.</h2>
+      <p>Account reviews and buyer conversations happen whether or not you had time to check the shelf. Alakai does the weekly collection for you, so you walk in with current competitive evidence and the data behind it.</p>
     </div>
-    <div class="loop">
-      <div class="s">
-        <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="#2C2D8E" stroke-width="2" aria-hidden="true"><path d="M2 22c6-9 13-13 20-13s14 4 20 13c-6 9-13 13-20 13S8 31 2 22z"/><circle cx="22" cy="22" r="6" fill="#2C2D8E" stroke="none"/></svg>
-        <h3>SEE</h3><p>Connect what ran at the shelf, including price, coupons, stacking, and competitor moves, with your sales and manufacturer economics.</p>
-        <svg class="arrow" viewBox="0 0 26 26" aria-hidden="true"><path d="M8 5l9 8-9 8" fill="none" stroke="#2C2D8E" stroke-width="2"/></svg>
+    <div class="grid">
+      <div>
+        <h3>Stop collecting by hand</h3>
+        <p>Store visits, screenshots and circulars become one preprocessed brief, refreshed on a consistent weekly schedule with the latest observation date shown.</p>
       </div>
-      <div class="s">
-        <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="#2C2D8E" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><rect x="24" y="4" width="16" height="16"/><rect x="4" y="24" width="16" height="16"/><rect x="24" y="24" width="16" height="16" fill="#2C2D8E"/><path d="M28 32l3 3 6-7" stroke="#fff"/></svg>
-        <h3>DECIDE</h3><p>Event economics your analysts can reproduce show which promotions to stop, change, or accelerate. Shape them into one package of linked changes within your budget and calendar.</p>
-        <svg class="arrow" viewBox="0 0 26 26" aria-hidden="true"><path d="M8 5l9 8-9 8" fill="none" stroke="#2C2D8E" stroke-width="2"/></svg>
+      <div>
+        <h3>Walk in with evidence</h3>
+        <p>Own-brand and competitor offers, verified price conditions and shelf-price changes, ready for the internal account review and the buyer meeting.</p>
       </div>
-      <div class="s">
-        <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="#2C2D8E" stroke-width="2" aria-hidden="true"><path d="M4 22h30"/><path d="M26 12l12 10-12 10"/><rect x="4" y="4" width="10" height="10" fill="#2C2D8E" stroke="none"/><rect x="4" y="30" width="10" height="10" fill="#2C2D8E" stroke="none"/></svg>
-        <h3>ACT</h3><p>Bring internal reviews and buyer feedback into the proposal as they arrive. Track revisions and approvals, then confirm the agreed changes in the plan before they lock.</p>
-        <svg class="arrow" viewBox="0 0 26 26" aria-hidden="true"><path d="M8 5l9 8-9 8" fill="none" stroke="#2C2D8E" stroke-width="2"/></svg>
-      </div>
-      <div class="s">
-        <svg class="ic" viewBox="0 0 44 44" fill="none" stroke="#2C2D8E" stroke-width="2" aria-hidden="true"><path d="M4 40h36"/><rect x="7" y="26" width="7" height="14"/><rect x="18.5" y="16" width="7" height="24" fill="#2C2D8E"/><rect x="30" y="8" width="7" height="32"/></svg>
-        <h3>MEASURE</h3><p>After the changed promotions run, compare outcomes with the original estimate. Early reads and settled financial results improve the next proposal.</p>
+      <div>
+        <h3>Keep the source data</h3>
+        <p>Every brief comes with its store-week-GTIN observations in Excel, so you can connect them to your own performance analysis and reproduce the banner-level read-out.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cycle">
-  <div class="wrap grid">
-    <div>
-      <div class="eyebrow">Your first 90 days</div>
-      <h2 style="margin-top:12px">One account. One proposal. Agreed before it locks.</h2>
-      <p class="lede">Promotions typically lock about 12 weeks before they run. The trial works on the ones you can still change, up to six months out, and paces the calendar to your decision dates and buyer lead time.</p>
-      <div class="timeline" role="list" aria-label="90-day trial phases">
-        <div class="phase" role="listitem">
-          <span class="when">Weeks 1–3<small>At kickoff</small></span>
-          <span class="rail" aria-hidden="true"></span>
-          <h3>Set the scope</h3>
-          <p>Account, decision dates, approved data</p>
-        </div>
-        <div class="phase" role="listitem">
-          <span class="when">Weeks 4–8<small>As inputs arrive</small></span>
-          <span class="rail" aria-hidden="true"></span>
-          <h3>Develop the proposal</h3>
-          <p>Event facts, priorities, team input, buyer feedback</p>
-        </div>
-        <div class="phase" role="listitem">
-          <span class="when">Weeks 9–12<small>Before the lock</small></span>
-          <span class="rail" aria-hidden="true"></span>
-          <h3>Agree and record</h3>
-          <p>Approvals, confirmed plan changes, measurement baseline</p>
-        </div>
+<!-- WHAT'S IN THE BRIEF -->
+<section class="inside" id="inside">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The weekly brief</div>
+      <h2>One account brief, ready when you ask for it.</h2>
+      <p>Preprocessed weekly and retrieved in Claude through the Alakai connector and skills. The latest brief and recent history are available immediately after setup.</p>
+    </div>
+    <div class="cards">
+      <div class="c">
+        <svg viewBox="0 0 44 44" fill="none" stroke="#2C2D8E" stroke-width="2" aria-hidden="true"><rect x="4" y="8" width="36" height="30"/><path d="M4 16h36M12 4v8M32 4v8"/><rect x="10" y="22" width="10" height="6" fill="#2C2D8E" stroke="none"/><rect x="22" y="22" width="12" height="6" fill="#ABACD2" stroke="none"/></svg>
+        <h3>Promotions</h3>
+        <p>Offers that ended in the prior week, started, or remained active, with own-brand and competitor overlap by banner.</p>
       </div>
-      <div class="facts">
-        <div><b>One account</b><span>Your customer and commercial team</span></div>
-        <div><b>Read-only start</b><span>Nothing changes without your approval</span></div>
-        <div><b>Time to agree</b><span>Review and negotiation built into the plan</span></div>
+      <div class="c">
+        <svg viewBox="0 0 44 44" fill="none" stroke="#2C2D8E" stroke-width="2" aria-hidden="true"><path d="M6 8h32M10 18h24M14 28h16M18 38h8"/><circle cx="38" cy="8" r="3" fill="#2C2D8E" stroke="none"/></svg>
+        <h3>Price cascade</h3>
+        <p>Regular price plus verified loyalty, multi-buy, store coupon and digital coupon conditions. Continuing offers carry forward; discounts combine only when stacking is verified.</p>
       </div>
-      <p class="timing-note">Results are measured after the changed promotions run: early reads first, settled financials typically three to four months later.</p>
-      <div class="ctas">
-        <a class="btn" href="#leadForm">Explore a trial</a>
-        <a class="btn secondary" id="bandCal" href="#" target="_blank" rel="noopener">Book a trial call</a>
+      <div class="c">
+        <svg viewBox="0 0 44 44" fill="none" stroke="#2C2D8E" stroke-width="2" aria-hidden="true"><path d="M4 36l10-12 8 6 8-14 10 8"/><path d="M4 40h36"/><circle cx="30" cy="16" r="3" fill="#2C2D8E" stroke="none"/></svg>
+        <h3>Shelf prices</h3>
+        <p>Regular shelf-price changes for the configured brands and banners, with comparable observations so a missing observation is never read as no change.</p>
+      </div>
+      <div class="c">
+        <svg viewBox="0 0 44 44" fill="none" stroke="#2C2D8E" stroke-width="2" aria-hidden="true"><path d="M10 4h18l10 10v26H10z"/><path d="M28 4v10h10"/><path d="M16 22h14M16 28h14M16 34h14"/></svg>
+        <h3>Excel source</h3>
+        <p>The underlying store-week-GTIN observations as a downloadable .xlsx, including the fields needed to reproduce the banner-level read-out.</p>
       </div>
     </div>
-    <div>
-      <div class="shot"><img src="assets/post-event-insights.png" alt="Alakai post-event insights: manufacturer ROI, net sales per trade dollar, incremental gross sales and margin versus the 52-week benchmark"></div>
-      <p class="shot-cap">Sample post-event insights from Alakai. Event evidence informs the proposal alongside team input and buyer feedback.</p>
+    <p class="note fine">Briefs show observed prices and offers. Discounts are attributed to what was observed; trade funding, sales lift, margin and promotion ROI need evidence beyond observed price data and are not inferred.</p>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps" id="steps">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How it works</div>
+      <h2>From signup to your first brief in about ten minutes.</h2>
     </div>
+    <div class="grid">
+      <ol>
+        <li><div><b>Create your account and choose a retailer</b><p>Select a supported retailer and up to three of its banners. You see the available geography, observation dates and coverage before you proceed.</p></div></li>
+        <li><div><b>Set your watchlist</b><p>Pick one internal brand and confirm three competitors. Alakai suggests competitors where it can. Edit any time within your plan limits.</p></div></li>
+        <li><div><b>Connect Alakai to Claude</b><p>A short guided setup adds the Alakai connector and skills to your personal Claude account.</p></div></li>
+        <li><div><b>Retrieve your brief</b><p>Ask Claude for this week's brief. Read it, ask follow-up questions, and download the Excel source file.</p></div></li>
+        <li><div><b>Subscribe when you are ready</b><p>Choose Basic or Pro, monthly or annual, through Stripe. Billing, plan changes and cancellation are self-service.</p></div></li>
+      </ol>
+      <div class="aside">
+        <h3>Works inside the Claude account you already use</h3>
+        <p>Alakai is delivered through a Model Context Protocol connector and skills in a personal Claude account, so your brief lives where you already ask questions. There is no new dashboard to learn and no customer data to integrate.</p>
+        <p>Claude access is separate from your Alakai subscription. The trial demonstrates the complete Basic workflow, and access ends after 30 days unless you subscribe.</p>
+        <a class="btn signup" href="#">Start your free trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRO INSIGHTS -->
+<section class="pro">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Pro · on-demand insights</div>
+      <h2>Four comparisons you can run when the question comes up.</h2>
+      <p>Pro monitors every brand in one category at your retailer with twelve weeks of history, and adds four user-selected analyses across the supported retailer catalog within that category.</p>
+    </div>
+    <div class="grid">
+      <div><h3>Competitive shelf price gaps</h3><p>Own-brand versus competitor shelf prices, with absolute and percentage gaps on a stated unit or size basis.</p></div>
+      <div><h3>Pack ladders versus competition</h3><p>Pack sizes and counts across brands, showing gaps and overlaps in the available pack structure.</p></div>
+      <div><h3>Price ladders versus competition</h3><p>Entry, intermediate and premium price points across products, with pack and unit context.</p></div>
+      <div><h3>Retailer promotion calendars</h3><p>Observed promotion timing, mechanics and competitive overlap across selected retailers. Future dates appear only when sourced.</p></div>
+    </div>
+    <p class="note fine">Trial and Basic include one fixed-scope preview of each Pro insight, using your configured brands and retailer where supported. Any illustrative example is labelled. Full reruns and configurable comparisons are part of Pro.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Plans and prices</div>
+      <h2>Start free. Pay per subscriber when it earns its place.</h2>
+    </div>
+    <div class="toggle" role="group" aria-label="Billing period">
+      <button type="button" class="on" data-bill="monthly">Monthly</button>
+      <button type="button" data-bill="annual">Annual<small>save 20%</small></button>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Free trial</h3>
+        <p class="who">The complete Basic workflow, for 30 days</p>
+        <div class="price"><b>$0</b> <span>for 30 days</span></div>
+        <p class="bill">No card required until you subscribe</p>
+        <ul>
+          <li>One retailer, up to three banners</li>
+          <li>One internal brand plus three competitors</li>
+          <li>Weekly brief with rolling 4-week history</li>
+          <li>Excel source download</li>
+          <li>One fixed-scope preview of each Pro insight</li>
+        </ul>
+        <a class="btn signup" href="#" data-plan="trial">Start free trial</a>
+      </div>
+      <div class="plan">
+        <h3>Basic</h3>
+        <p class="who">Monitor your brand and three competitors at one retailer</p>
+        <div class="price"><b data-m="$38" data-a="$30.40">$38</b> <span>per month</span></div>
+        <p class="bill" data-m="Billed monthly" data-a="Billed $364.80 a year, upfront">Billed monthly</p>
+        <ul>
+          <li>One retailer, up to three banners</li>
+          <li>Five monitored brands, editable</li>
+          <li>Weekly brief with rolling 4-week history</li>
+          <li>Excel source download</li>
+          <li>One fixed-scope preview of each Pro insight</li>
+        </ul>
+        <a class="btn secondary signup" href="#" data-plan="basic">Choose Basic</a>
+      </div>
+      <div class="plan hi">
+        <h3>Pro</h3>
+        <p class="who">Monitor the whole category with twelve weeks of history</p>
+        <div class="price"><b data-m="$73" data-a="$58.40">$73</b> <span>per month</span></div>
+        <p class="bill" data-m="Billed monthly" data-a="Billed $700.80 a year, upfront">Billed monthly</p>
+        <ul>
+          <li>One retailer, up to three banners</li>
+          <li>All brands in one selected category</li>
+          <li>Weekly brief with rolling 12-week history</li>
+          <li>Excel source download</li>
+          <li>Four on-demand insights, configurable</li>
+        </ul>
+        <a class="btn signup" href="#" data-plan="pro">Choose Pro</a>
+      </div>
+      <div class="plan">
+        <h3>Enterprise</h3>
+        <p class="who">Additional retailers or categories on a recurring basis</p>
+        <div class="price"><b>Quote</b></div>
+        <p class="bill">Agreed scope and history</p>
+        <ul>
+          <li>Additional recurring retailer coverage</li>
+          <li>Additional category coverage</li>
+          <li>History to your agreed scope</li>
+          <li>Everything in Pro</li>
+        </ul>
+        <a class="btn secondary" id="entCal" href="#" target="_blank" rel="noopener">Book a call</a>
+      </div>
+    </div>
+    <p class="note fine">Prices are per subscriber in USD. Annual plans are billed upfront and save 20%. Claude access is separate. The category definition and included brands are shown before you purchase Pro. Coverage limits apply to one saved watchlist per subscriber.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Questions</div>
+      <h2>Before you start</h2>
+    </div>
+    <div class="list">
+      <details>
+        <summary>Do I need to connect my own sales or planning data?</summary>
+        <p>No. Setup needs only your retailer, banners and brands. Alakai works from observed shelf data. You can connect the Excel source file to your own performance analysis if you want to.</p>
+      </details>
+      <details>
+        <summary>What do I need on the Claude side?</summary>
+        <p>A personal Claude account that supports connectors. The guided setup adds the Alakai connector and its skills. Claude access is billed separately by its provider and is not included in an Alakai plan.</p>
+      </details>
+      <details>
+        <summary>Which retailers and brands are covered?</summary>
+        <p>Alakai observes 45 grocery banners today and adds more each month. When you create your account you see the supported retailers, banners, geography and observation dates before you commit. If your retailer or category is not yet covered, book a call and we will tell you when it will be.</p>
+      </details>
+      <details>
+        <summary>How current is the data?</summary>
+        <p>Briefs refresh on a consistent weekly schedule and each one shows its latest observation date, observed store counts and geography. Exact duration or overlap claims use explicit offer dates; otherwise the brief describes the observed weeks.</p>
+      </details>
+      <details>
+        <summary>What happens when the trial ends?</summary>
+        <p>Access ends after 30 days unless you subscribe. The expiry message links directly to checkout, where you choose Basic or Pro and monthly or annual billing. You can change plans or cancel yourself at any time.</p>
+      </details>
+      <details>
+        <summary>Can my whole team use one subscription?</summary>
+        <p>Plans are per subscriber, each with one saved watchlist. Team administration is not part of this release. For several people or several retailers, the Enterprise route sets an agreed scope.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>Your first brief is about ten minutes away.</h2>
+    <p>One retailer, your brand and three competitors, refreshed every week inside Claude. Free for 30 days, no card required.</p>
+    <div class="ctas">
+      <a class="btn light signup" href="#">Start your free 30-day trial</a>
+      <a class="btn ghost" id="finalCal" href="#" target="_blank" rel="noopener">Talk to us about Enterprise</a>
+    </div>
+    <p class="note">Basic is $38 a month after the trial. Cancel any time.</p>
   </div>
 </section>
 
@@ -268,38 +502,37 @@ footer .legal{width:100%;font-size:11px;line-height:17px;border-top:1px solid va
   <div class="wrap">
     <img src="assets/alakai-wordmark-blue-2x.png" alt="Alakai">
     <div>Alakai Labs, Inc. © 2026 <a href="https://alakailabs.com/">alakailabs.com</a><a href="https://alakailabs.com/data-security-and-trust/">Data security</a></div>
-    <div class="legal">Coverage and trial scope depend on the selected account, covered banners, and available data. Commercial calculations are deterministic and reproducible; recommendations are reviewed and approved by your team. Expected benefits are annualized estimates, not realized impact; financial results are evaluated after execution and settlement.</div>
+    <div class="legal">Coverage depends on the selected retailer, banners and available observations; observed store counts, geography and dates are shown in each brief. Briefs report observed prices and offer conditions. Discounts are combined only when stacking is verified, and missing observations are reported as such rather than as no change. Trade funding, sales lift, margin and promotion ROI are not inferred from observed price data. Product appearance and disappearance are observations, not confirmed listings or delistings. Prices in USD per subscriber. Claude is a product of Anthropic, PBC, provided and billed separately; Alakai is not affiliated with or endorsed by Anthropic.</div>
   </div>
 </footer>
 
 <script>
 /* ---------- CONFIG: swap before publishing ---------- */
 var CONFIG = {
-  calendarUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3ZODiaE1xRRjrfAIcmAlv8qBab3uAePzYY3nNhO2TQvm-7yzCmERpYA3OzffrwOMW4tCx7qk0Z?gv=true&utm_source=tryalakai&utm_medium=landing",
-  contactEmail: "hello@tryalakai.com",   // inbox that receives trial enquiries
-  formEndpoint: ""                       // Formspree / HubSpot / Netlify endpoint; empty = mailto fallback
+  signupUrl: "https://app.tryalakai.com/signup",   // account creation; plan is appended as ?plan=trial|basic|pro
+  calendarUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3ZODiaE1xRRjrfAIcmAlv8qBab3uAePzYY3nNhO2TQvm-7yzCmERpYA3OzffrwOMW4tCx7qk0Z?gv=true&utm_source=tryalakai&utm_medium=landing"
 };
 (function(){
-  ['navCal','cardCal','bandCal'].forEach(function(id){ document.getElementById(id).href = CONFIG.calendarUrl; });
-  var form = document.getElementById('leadForm'), ok = document.getElementById('formOk');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var valid = true;
-    ['f_name','f_email','f_phone'].forEach(function(id){ var el = document.getElementById(id); var bad = !el.value.trim() || (el.type==='email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value)); el.classList.toggle('err', bad); if(bad) valid = false; });
-    if(!valid) return;
-    var d = {}; new FormData(form).forEach(function(v,k){ d[k] = v; });
-    if(CONFIG.formEndpoint){
-      fetch(CONFIG.formEndpoint, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(d)})
-        .then(function(response){ if(!response.ok) throw new Error('Request was not accepted'); show('Thank you. We will be in touch within one business day to discuss your trial.'); form.reset(); })
-        .catch(function(){ mailto(d); });
-    } else { mailto(d); }
+  // Signup links
+  document.querySelectorAll('a.signup').forEach(function(a){
+    var plan = a.getAttribute('data-plan') || 'trial';
+    a.href = CONFIG.signupUrl + (CONFIG.signupUrl.indexOf('?') > -1 ? '&' : '?') + 'plan=' + plan + '&utm_source=tryalakai&utm_medium=landing';
   });
-  function mailto(d){
-    var body = 'Name: '+d.name+'\nWork email: '+d.email+'\nPhone: '+d.phone+'\nCompany: '+(d.company||'')+'\nSource: tryalakai.com';
-    window.location.href = 'mailto:'+CONFIG.contactEmail+'?subject='+encodeURIComponent('Trial enquiry via tryalakai.com')+'&body='+encodeURIComponent(body);
-    show('Your email app should open with your details. Send the email to complete your enquiry. If it did not open, email '+CONFIG.contactEmail+'.');
-  }
-  function show(m){ ok.textContent = m; ok.classList.add('show'); }
+  ['entCal','finalCal'].forEach(function(id){ document.getElementById(id).href = CONFIG.calendarUrl; });
+
+  // Illustrative brief: most recent Saturday
+  var d = new Date(); d.setDate(d.getDate() - ((d.getDay() + 1) % 7));
+  document.getElementById('wk').textContent = d.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+
+  // Pricing toggle
+  var buttons = document.querySelectorAll('.toggle button');
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      var annual = b.getAttribute('data-bill') === 'annual';
+      buttons.forEach(function(x){ x.classList.toggle('on', x === b); });
+      document.querySelectorAll('[data-m]').forEach(function(el){ el.textContent = el.getAttribute(annual ? 'data-a' : 'data-m'); });
+    });
+  });
 })();
 </script>
 </body>
